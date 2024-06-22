@@ -115,3 +115,7 @@ switch(day){ // strict comparison
         console.log("Not a vaild day");
 }
 */
+
+/** Ternery Operator
+ * expression/condition ? ifTrue : ifFalse;
+ */
