@@ -41,3 +41,14 @@ console.log(typeof(null)); // Object (bug)
  * var
  */
 
+
+/** Operators
+ * operators have preceence refer below link:
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence
+ * +, -, *, /, **
+ * + can be used for string concatenation
+ * = assignment 
+ * ++, -- 
+ * >, >=, <, <=
+ */
+
