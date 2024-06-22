@@ -20,7 +20,7 @@ console.log(firstName);
 /** Data Types
  * every value is javascript is either an Object or a Primitive 
  * In javascript we don't have to manually define the data type of the value stored in a variable.
- 
+
 console.log(typeof(23)); // Number
 console.log(typeof(30.5)); // Number
 console.log(typeof("Hello World")); // String
@@ -32,6 +32,25 @@ console.log(uninitializedVariable); // Undefined
 console.log(typeof(uninitializedVariable)); // Undefined
 
 console.log(typeof(null)); // Object (bug)
+*/
+
+
+/** Type Coversion and Coersion
+
+ * Type Conversion - explicit
+
+console.log(Number("Patrick"), typeof(Number("Patrick")));
+
+ * Coersion - implicit; 
+    Note: Different operators may trigger different type coersion (may lead to unexpected bugs)
+
+ */
+
+
+/** Truthy and Falsey Values 
+
+console.log(Boolean(0), Boolean(''), Boolean(undefined), Boolean(null), Boolean(NaN));
+console.log(Boolean({}));
 */
 
 
@@ -50,5 +69,49 @@ console.log(typeof(null)); // Object (bug)
  * = assignment 
  * ++, -- 
  * >, >=, <, <=
+ * === / !== doesn't perform type coersion
+ * == / != performs type coresion
+ * !, &&, ||
  */
 
+
+/** Template Literals
+
+const firstName = "Sam", birthYear = 2003, currYear = 2024, job = "teacher";
+const templateLiteral = `I'm ${firstName}, a ${currYear-birthYear} years old ${job}!`;
+console.log(templateLiteral);
+
+console.log(`This is a
+multi-line
+string
+`);
+*/
+
+
+/** if-else statement
+if(condition){
+    stmt;
+} 
+else if (condition){
+    stmt;
+}
+else {
+    stmt;
+}
+ */
+
+/** Switch Statement
+
+const day = prompt("What day is it today:").toLowerCase();
+
+switch(day){
+    case "monday" || "tuesday" || "wednesday" || "thursday" || "friday":
+        console.log("Today is a working day");
+        break;
+    case "saturday" || "sunday":
+        console.log("Enjoy the weekend");
+        break;
+    default:
+        console.log("Not a vaild day");
+}
+*/
