@@ -104,7 +104,7 @@ else {
 
 const day = prompt("What day is it today:").toLowerCase();
 
-switch(day){
+switch(day){ // strict comparison
     case "monday" || "tuesday" || "wednesday" || "thursday" || "friday":
         console.log("Today is a working day");
         break;
