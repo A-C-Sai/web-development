@@ -18,7 +18,7 @@ console.log(firstName);
 
 
 /** Data Types
- * every value is javascript is either an Object or a Primitive 
+ * every value is javascript is either an Object or a Primitive (immutable)
  * In javascript we don't have to manually define the data type of the value stored in a variable.
 
 console.log(typeof(23)); // Number
