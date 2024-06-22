@@ -119,3 +119,10 @@ switch(day){ // strict comparison
 /** Ternery Operator
  * expression/condition ? ifTrue : ifFalse;
  */
+
+/**
+ * Javascript is backwards compatible
+ * How to use modern javascript:
+    - During Development: use the latest browser
+    - During Production: Use Babel to transpile and polyfill code (converting back to ES5 to ensure browser compatibility for all users.)
+ */
