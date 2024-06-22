@@ -47,4 +47,48 @@ const <array_name> = new Array(element1, element2, element3);
 <array_name>[index] // accessing
 <array_name>[index] = value; // setting
 
+methods:
+- <array_name>.push(element) adds element to the end of the array; returns new array length
+- <array_name>.pop() removes the last element in the array returns removed element
+- <array_name>.unshift(element) adds element to the start of the array; returns new array length
+- <array_name>.shift() removes the first element in the array returns removed element
+- <array_name>.indexOf(element) index of element if it exists else -1
+- <array_name>.includes(element) true/false
+*/
+
+/** Objects
+
+const <obj_name> = {
+    <key/property>: value,
+    <key/property>: value,
+    <key/property>: function expression (object method)
+};
+
+// accessing
+<obj_name>.<property>
+<obj_name>['<property>']
+
+-> setting can be done using both dot and bracket notation, can create new properties on the fly
+
+-> "this" keyword refers to the object itself
+
+*/
+
+
+
+/** Loops
+
+-> loops keeps running while loopCondition is true
+for(let counter = value; loopCondition; update counter){
+    stmt;
+}
+
+keywords: continue, break
+
+let counter = value;
+while(condition) {
+
+    update counter;
+}
+
 */
