@@ -4,7 +4,6 @@ console.log(23);
 console.log("Hello World!");
 */
 
-
 /** Variables
  * variables names can only contain alphanumeric, _ and $
  * cannot start with a number (alphabets, _ and $ acceptable)
@@ -14,8 +13,7 @@ console.log("Hello World!");
 let firstName; // camelCase naming convention
 firstName = "Sam";
 console.log(firstName);
- */ 
-
+ */
 
 /** Data Types
  * every value is javascript is either an Object or a Primitive (immutable)
@@ -34,7 +32,6 @@ console.log(typeof(uninitializedVariable)); // Undefined
 console.log(typeof(null)); // Object (bug)
 */
 
-
 /** Type Coversion and Coersion
 
  * Type Conversion - explicit
@@ -46,34 +43,30 @@ console.log(Number("Patrick"), typeof(Number("Patrick")));
 
  */
 
-
 /** Truthy and Falsey Values 
 
 console.log(Boolean(0), Boolean(''), Boolean(undefined), Boolean(null), Boolean(NaN));
 console.log(Boolean({}));
 */
 
-
 /** Declaring Variables
- * const 
+ * const
  * let
  * var
  */
-
 
 /** Operators
  * operators have preceence refer below link:
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence
  * +, -, *, /, **
  * + can be used for string concatenation
- * = assignment 
- * ++, -- 
+ * = assignment
+ * ++, --
  * >, >=, <, <=
  * === / !== doesn't perform type coersion
  * == / != performs type coresion
  * !, &&, ||
  */
-
 
 /** Template Literals
 
@@ -86,7 +79,6 @@ multi-line
 string
 `);
 */
-
 
 /** if-else statement
 if(condition){

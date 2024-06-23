@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /** Function Declaration
 
@@ -36,7 +36,6 @@ const <var_name> = (parameters) => {
 
 */
 
-
 /** Arrays (mutable)
 
 const <array_name> = [element1, element2, element3]; // can store hetrogeneous elements
@@ -73,8 +72,6 @@ const <obj_name> = {
 -> "this" keyword refers to the object itself
 
 */
-
-
 
 /** Loops
 
