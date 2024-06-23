@@ -1,0 +1,32 @@
+/*
+selector {
+    key: value;
+    key: value;
+        .
+        .
+        .
+}
+
+global selector (reset all styling): * 
+element selector: element name
+class selector: .<class_name>
+id selector: #<id_name>
+
+There are more selectors e.g. child selector Refer to MDNg
+*/
+
+bode {
+    background-color: aquamarine;
+}
+
+/*
+BOX-MODEL is a fundamental part of CSS. It defines how elements are displayed on a web page and how they are sized.
+
+    margin : spaces b/w boxes
+    border: goes around the padding and the content
+    padding: transparent area around the content, inside the box;
+    content: text, image etc.
+
+    fill area: area that gets filled with background color and image.
+
+*/
