@@ -55,6 +55,33 @@ methods:
 - <array_name>.includes(element) true/false
 */
 
+
+
+/*
+function MinMax(arr) {
+    // able to find the minimum and maximum element 
+    // of a given array in a single scan
+
+    let min = Number.MAX_VALUE;
+    let max = Number.MIN_VALUE;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < min) min = arr[i];
+        else {
+            if (arr[i] > max) max = arr[i];
+        }
+    }
+
+    return [min, max];
+}
+
+const [min, max] = MinMax([3, 6, 2, 9, 10, 0, 5, 2, 8]);
+
+console.log(min, max);
+*/
+
+
+
 /** Objects
 
 const <obj_name> = {
@@ -89,3 +116,4 @@ while(condition) {
 }
 
 */
+
