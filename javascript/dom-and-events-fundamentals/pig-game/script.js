@@ -1,5 +1,8 @@
 'use strict';
 
+// TODO: Refactor code
+// FIXME: Able to switch player without rolling the die
+
 const btnRoll = document.querySelector('.btn--roll');
 const diceImg = document.querySelector('.dice');
 const btnHold = document.querySelector('.btn--hold');
