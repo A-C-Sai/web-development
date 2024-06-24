@@ -24,33 +24,31 @@
 // Initial Game Setup
 document.querySelector('.guess').value = ""
 
-let highScore = 0;
-document.querySelector('.highscore').textContent = highScore;
+let bestAttempt = 999999;
 
 const generateNumber = () => Math.trunc((Math.random() * 20)) + 1;
 let luckyNumber = generateNumber();
 
-let currScore = Number(document.querySelector('.score').textContent);
+let attempts = Number(document.querySelector('.attempts').textContent);
 
 
 
-// high score checker
+// best attempt checker
 function isNewHigh() {
 
-    return currScore > highScore;
+    return attempts < bestAttempt;
 }
 
-// update high score
-function updateHighScore() {
+// update best attempt
+function updateBestAttempt() {
 
-    highScore = currScore;
-    document.querySelector('.highscore').textContent = highScore;
+    bestAttempt = attempts;
+    document.querySelector('.best').textContent = bestAttempt;
 }
 
-// update score
-function updateScore(isRight) {
-    if (isRight) document.querySelector('.score').textContent = ++currScore;
-    else document.querySelector('.score').textContent = --currScore;
+// update attempts
+function updateAttempts() {
+    document.querySelector('.attempts').textContent = ++attempts;
 }
 
 // set message 
@@ -58,12 +56,6 @@ function setMessage(str) {
     document.querySelector('.message').textContent = str;
 }
 
-// 0 points
-function noPoints() {
-    setMessage(`💥 You lost!`);
-    updateScore(false);
-
-}
 
 // set body background color
 function setBodyBg(str) {
@@ -80,21 +72,19 @@ function checkNumber() {
     else {
 
         if (guessedNumber === luckyNumber) {
-
+            updateAttempts();
             document.querySelector('.number').textContent = luckyNumber;
             document.querySelector('.number').style.width = "30rem";
-            setMessage(`🍕 Correct Guess`);
+            setMessage(`🎉 Correct Guess`);
             setBodyBg("#60b347");
-            updateScore(true);
-            if (isNewHigh()) updateHighScore();
+            if (isNewHigh()) updateBestAttempt();
+            document.querySelector('.check').style.display = "none";
 
         } else {
-            if (currScore === 1) noPoints();
-            else {
-                setMessage(guessedNumber < luckyNumber ? `📉 Too Low!` : `📈 Too High!`);
-                updateScore(false);
-                setBodyBg("#C41E3A");
-            }
+
+            setMessage(guessedNumber < luckyNumber ? `📉 Too Low!` : `📈 Too High!`);
+            updateAttempts();
+            setBodyBg("#C41E3A");
         }
     }
 }
@@ -106,8 +96,8 @@ document.querySelector('.check').addEventListener('click', checkNumber);
 // restart game 
 function playAgain() {
 
-    currScore = 20;
-    document.querySelector('.score').textContent = currScore;
+    attempts = 0;
+    document.querySelector('.attempts').textContent = attempts;
 
     luckyNumber = generateNumber();
     document.querySelector('.number').textContent = `?`;
@@ -118,6 +108,7 @@ function playAgain() {
     setBodyBg("#222");
 
     document.querySelector('.guess').value = "";
+    document.querySelector('.check').style.display = "block";
 
 }
 document.querySelector('.again').addEventListener('click', playAgain);
