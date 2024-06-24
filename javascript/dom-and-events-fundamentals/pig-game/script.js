@@ -92,6 +92,8 @@ btnNew.addEventListener('click', function () {
         players[activePlayer].section.classList.remove('player--winner');
     }
 
+    players[activePlayer].playerName.textContent = `PLAYER ${activePlayer + 1}`;
+
     player0.currScore = player0.totScore = 0;
     player1.currScore = player1.totScore = 0;
     player0.totScoreElement.textContent = player0.currScoreElement.textContent = 0;
