@@ -107,7 +107,7 @@ btnNew.addEventListener('click', function () {
     activePlayer = 0;
     players[activePlayer].section.classList.add('player--active');
 
-    btnRoll.classList.remove('hidden');
+    if (btnRoll.classList.contains('hidden')) btnRoll.classList.remove('hidden');
 
     if (!btnHold.classList.contains('hidden')) btnHold.classList.add('hidden');
 
