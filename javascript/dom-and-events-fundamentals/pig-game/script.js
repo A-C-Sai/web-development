@@ -8,6 +8,7 @@ const btnNew = document.querySelector('.btn--new');
 // players
 const player0 = {
     section: document.querySelector('.player--0'),
+    playerName: document.querySelector('#name--0'),
     totScoreElement: document.getElementById('score--0'),
     currScoreElement: document.getElementById('current--0'),
     totScore: 0,
@@ -16,6 +17,7 @@ const player0 = {
 
 const player1 = {
     section: document.querySelector('.player--1'),
+    playerName: document.querySelector('#name--1'),
     totScoreElement: document.getElementById('score--1'),
     currScoreElement: document.getElementById('current--1'),
     totScore: 0,
@@ -47,7 +49,7 @@ btnRoll.addEventListener('click', function () {
         players[activePlayer].currScore = 0;
         players[activePlayer].currScoreElement.textContent = players[activePlayer].currScore;
         players[activePlayer].section.classList.remove('player--active');
-        activePlayer = Math.abs(~(-activePlayer)); // bitwise operator helps us switch active players
+        activePlayer = activePlayer === 0 ? 1 : 0; // helps us switch active players
         players[activePlayer].section.classList.add('player--active');
 
     } else { // add number to current score
@@ -69,6 +71,7 @@ btnHold.addEventListener('click', function () {
     if (players[activePlayer].totScore >= 50) { // if winning limit of 50 is reached
 
         players[activePlayer].section.classList.add('player--winner');
+        players[activePlayer].playerName.textContent = "Winner!";
         btnRoll.classList.add('hidden');
         btnHold.classList.add('hidden');
         diceImg.classList.add('hidden');
@@ -85,7 +88,7 @@ btnHold.addEventListener('click', function () {
 // reset game to initial conditions
 btnNew.addEventListener('click', function () {
 
-    if (players[activePlayer].section.classList.contains('player--winner')) {
+    if (players[activePlayer].section.classList.contains('player--winner')) { // we could have used classList.toggle()
         players[activePlayer].section.classList.remove('player--winner');
     }
 
