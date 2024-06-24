@@ -28,14 +28,18 @@ const player1 = {
 player0.totScoreElement.textContent = player0.currScoreElement.textContent = 0;
 player1.totScoreElement.textContent = player1.currScoreElement.textContent = 0;
 diceImg.classList.add('hidden');
+btnHold.classList.add('hidden');
 
 // active Player 
 let activePlayer = 0;
 const players = [player0, player1];
 
 
+
 // main game functionality
 btnRoll.addEventListener('click', function () {
+
+    if (btnHold.classList.contains('hidden')) btnHold.classList.remove('hidden');
 
     // generate number
     const roll = Math.trunc(Math.random() * 6) + 1;
@@ -104,7 +108,8 @@ btnNew.addEventListener('click', function () {
     players[activePlayer].section.classList.add('player--active');
 
     btnRoll.classList.remove('hidden');
-    btnHold.classList.remove('hidden');
+
+    if (!btnHold.classList.contains('hidden')) btnHold.classList.add('hidden');
 
 })
 
