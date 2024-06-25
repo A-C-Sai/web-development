@@ -105,5 +105,41 @@
  * Simple function call : this = undefined in strict mode otherwise window
  * Arrow Functions : this = <this of surrounding function (lexical this)>
  * Event listenet : this = <DOM element thta the handler is attached to>
+ *  
+*/
+
+
+
+/** Regular and Arrow functions
  * 
+ * Variables decalred with var create properties on the global objects
+ * Don't use arrow functions as methods, use function expressions
+ * We can preserve "this" by assigning it to a variable (self/that), we can also do this by using an arrow func
+ * Arrow functions don't have access to arguments keyword
+ * 
+function add() {
+    console.log(arguments);
+    let c = 0;
+    for (let i = 0; i < arguments.length; i++) {
+        c += arguments[i];
+    }
+    return c;
+}
+
+console.log(add(1, 2, 3));
+*/
+
+
+/** 
+const sam = {
+    firstName: 'Sam',
+    lastName: 'Matthews',
+};
+
+const samCopy = Object.assign({}, sam); // shallow copy (first level)
+
+sam.lastName = 'Jeffery';
+
+console.log(sam.lastName);
+console.log(samCopy.lastName);
 */
