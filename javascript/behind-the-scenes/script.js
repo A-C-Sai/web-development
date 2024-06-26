@@ -28,7 +28,7 @@
 
  * JIT Compilation : Imagine if someone gave you a set of tasks in German. Interpreter reads the tasks as he goes,
                      translates each task into English, and then does the task. Every time he does a German task,
-                     he has to translate it again...even if he already did a similar task or the exact same task before. A JIT keeps often used tasks translated in English and refers back as needed. If a task is executed only once, it often does the same thing that an interpreter does. A JIT compiler converts code into byte code first (error free program). Then, at runtime, it changes the byte code into machine-readable code, which makes the program run faster.
+                     he has to translate it again...even if he already did a similar task or the exact same task before. A JIT keeps often used tasks translated in English and refers back as needed. If a task is executed only once, it often does the same thing that an interpreter does. A JIT compiler converts code into byte code first (error free program). Then, at runtime, it changes the byte code into machine-readable code, which makes the program run faster. Entire code is converted into machine code at once, then executed immediately.
 
  * Parsing -> Compilation    ->     Execution
                    |                    |
@@ -54,14 +54,16 @@
 
  * Scope of a variable : Region of our code where a certain variable can be accessed
 
+ * Only let and const are block scoped doesn't apply to var, they end up in the closet function scope
+
+ * Functions are also block scoped when using strict mode. i.e. functions declared inside a block are only accessible
+   within the block.
+
  * Every Scope has access to variables from all outer scopes (one-way street)
 
  * When a variable is not on the current scope, the engine loops up in the scope chain until it finds the variable.
    This is called variable lookup.
 
- * Only let and const are block scoped doesn't apply to var, they end up in the closet function scope
-
- * Functions are also block scoped when using strict mode.
 
  * We can reassign variables from outer scopes even with nested functions.
    (unlinke in python, where we would have to use the nonlocal keyword)
@@ -104,7 +106,7 @@
  * Method : this = <Object that is calling the method>
  * Simple function call : this = undefined in strict mode otherwise window
  * Arrow Functions : this = <this of surrounding function (lexical this)>
- * Event listenet : this = <DOM element thta the handler is attached to>
+ * Event listenet : this = <DOM element that the handler is attached to>
  *  
 */
 
@@ -117,7 +119,7 @@
  * We can preserve "this" by assigning it to a variable (self/that), we can also do this by using an arrow func
  * Arrow functions don't have access to arguments keyword
  * 
-function add() {
+function add() { we can pass in more arguments than specified
     console.log(arguments);
     let c = 0;
     for (let i = 0; i < arguments.length; i++) {
@@ -131,6 +133,9 @@ console.log(add(1, 2, 3));
 
 
 /** 
+ * 
+ * Primitives are stored in the call stack (execution context) while objects/reference types are stored in heap
+ * 
 const sam = {
     firstName: 'Sam',
     lastName: 'Matthews',
