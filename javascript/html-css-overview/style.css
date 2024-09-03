@@ -1,5 +1,5 @@
 /*
-selector {
+selector, selector {
     key: value;
     key: value;
         .
@@ -15,7 +15,7 @@ id selector: #<id_name>
 There are more selectors e.g. child selector Refer to MDNg
 */
 
-bode {
+body {
     background-color: aquamarine;
 }
 
