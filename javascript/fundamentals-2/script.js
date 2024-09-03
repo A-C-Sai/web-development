@@ -47,7 +47,7 @@ const <array_name> = new Array(element1, element2, element3);
 <array_name>[index] = value; // setting
 
 methods:
-- <array_name>.push(element) adds element to the end of the array; returns new array length
+- <array_name>.push(element1, element2 ...) adds element to the end of the array; returns new array length
 - <array_name>.pop() removes the last element in the array returns removed element
 - <array_name>.unshift(element) adds element to the start of the array; returns new array length
 - <array_name>.shift() removes the first element in the array returns removed element
@@ -122,4 +122,8 @@ while(condition) {
  * console.warn()
  * console.error()
  * console.table()
+ */
+
+/**
+ * We can use the debugger; statement in our code to launch the debugger console in browser.
  */
