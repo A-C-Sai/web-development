@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 /** Features
  *
  * High-Level Language
@@ -13,10 +13,8 @@
  * Non-Blocking Event Loop
  */
 
-
-
 /** JS Engine and Runtime
- *
+ * JS Engine - Program that executes JS code
  * Contains:
  *  - Call Stack : where code is executed using execution context
  *  - Heap : unstructured memory pool which stores all the objects that the app needs
@@ -40,8 +38,6 @@
  *
 */
 
-
-
 /** Scope and The Scope Chain
  *
  * Scoping : How our program's variables are organized and accessed. Where do variables live?
@@ -50,7 +46,7 @@
  * Lexical Scoping : The rules of where we can access variables are based on exactly where in the code, function
                      and blocks are written.
 
- * Scope : Space in which a certain variable is declared. There is globas, function/local  and block scope.
+ * Scope : Space in which a certain variable is declared. There is global, function/local  and block scope.
 
  * Scope of a variable : Region of our code where a certain variable can be accessed
 
@@ -83,7 +79,6 @@
 
 */
 
-
 /** Hoisting
  *
  * Makes some types of variables accessible/usable in the code b/4 they are actually declared.
@@ -94,7 +89,6 @@
 */
 
 // window is the global object of JS in the browser
-
 
 /** this keyword
  * 
@@ -109,8 +103,6 @@
  * Event listenet : this = <DOM element that the handler is attached to>
  *  
 */
-
-
 
 /** Regular and Arrow functions
  * 
@@ -130,7 +122,6 @@ function add() { we can pass in more arguments than specified
 
 console.log(add(1, 2, 3));
 */
-
 
 /** 
  * 
