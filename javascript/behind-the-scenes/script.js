@@ -88,7 +88,7 @@
  *
 */
 
-// window is the global object of JS in the browser
+// window is the global object of JS in the browser, variables declared with var create a property on the global window object
 
 /** this keyword
  * 
@@ -125,7 +125,7 @@ console.log(add(1, 2, 3));
 
 /** 
  * 
- * Primitives are stored in the call stack (execution context) while objects/reference types are stored in heap
+ * Primitives (immutable) are stored in the call stack (execution context) while objects/reference types are stored in heap
  * 
 const sam = {
     firstName: 'Sam',
