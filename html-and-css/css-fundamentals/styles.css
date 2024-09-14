@@ -1,0 +1,113 @@
+/*
+1. font: -size, -family, -style, -weight
+2. text: -align, -transform
+3. line: -height
+4. list: -style
+5. color
+6. background: -color
+7. border: width style color
+*/
+
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: sans-serif;
+  color: #444;
+}
+
+h1,
+h4 {
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  color: #1098ad;
+}
+
+h1 {
+  font-size: 26px; /*Being h1 doesn;t mean it has to have the biggest font*/
+  font-style: italic;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 20px;
+  text-align: center;
+}
+
+p {
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+li {
+  font-size: 20px;
+}
+
+/*descendant selector: selects all p elements inside the footer*/
+/* footer p {
+  font-size: 16px;
+} */
+
+#copyright {
+  font-size: 16px;
+}
+
+#author {
+  font-size: 18px;
+  font-style: italic;
+}
+
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* In the real world id's aren't used. Using classes future proofs the code, in case we want to reuse the style. 
+Even if we use it only one, try using classes.*/
+.related {
+  list-style: none;
+}
+
+/* 
+    color - (R, G, B) values ranges  [0-255] OR [0 - ff]
+    1. rgb(R, G, B)
+    2. rgba(R, G, B, A)
+    3. #rrggbb
+    4. When colors in all 3 channels are the same we get a grey color
+*/
+
+.main-header {
+  background-color: #f7f7f7;
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+}
+
+/* li:first-child, li:last-child, li:nth-child(number/odd/even) */
+/* selects all li elements that are the first childs of it's parent elements  */
+li:first-child {
+  font-weight: bold;
+}
+
+/* 
+    article p - selects all p elements inside the article element
+    article p:first-child - selects p element that is the FIRST CHILD of the article element.
+                            NOT THE FIRST P ELEMENT INSIDE THE ARTICLE.
+
+*/
