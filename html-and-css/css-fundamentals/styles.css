@@ -1,6 +1,6 @@
 /*
 1. font: -size, -family, -style, -weight
-2. text: -align, -transform
+2. text: -align, -transform, -decoration
 3. line: -height
 4. list: -style
 5. color
@@ -99,7 +99,7 @@ aside {
   border-bottom: 5px solid #1098ad;
 }
 
-/* li:first-child, li:last-child, li:nth-child(number/odd/even) */
+/* li:first-child, li:last-child, li:nth-child(number/odd/even) pseudo-classes*/
 /* selects all li elements that are the first childs of it's parent elements  */
 li:first-child {
   font-weight: bold;
@@ -110,4 +110,20 @@ li:first-child {
     article p:first-child - selects p element that is the FIRST CHILD of the article element.
                             NOT THE FIRST P ELEMENT INSIDE THE ARTICLE.
 
+*/
+
+/* a:link, a:hover, a:hover, a:active DEFINED IN THIS ORDER */
+a:link,
+a:visited {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline orangered;
+}
+
+/* 
 */
