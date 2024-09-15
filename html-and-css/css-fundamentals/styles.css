@@ -14,6 +14,7 @@
 13. position
 14. top, bottom, left, right
 15. content
+16. letter spacing
 */
 
 * {
@@ -60,6 +61,7 @@ h2::after {
 
 nav {
   font-size: 18px;
+  text-align: center;
 }
 
 nav a:link {
@@ -208,6 +210,8 @@ a:hover {
   3. Class or Pseudo-class Selector
   4. Element Selector
   5. Universal Selector (*) -> applies styles to every single element NO Inheritance Involved
+
+  If one selector is more complex than the other, the complex one gets applies in most cases
 
   If there are multiple of each, then last selector in code applies.
 
