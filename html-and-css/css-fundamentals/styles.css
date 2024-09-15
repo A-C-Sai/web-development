@@ -6,14 +6,10 @@
 5. color
 6. background: -color
 7. border: width style color
+8. cursor
 */
 
-h1,
-h2,
-h3,
-h4,
-p,
-li {
+body {
   font-family: sans-serif;
   color: #444;
 }
@@ -125,5 +121,23 @@ a:hover {
   text-decoration: underline orangered;
 }
 
-/* 
+/* Conflicting Declarations
+
+  0. Declarations marked with !important
+  1. In-line styles
+  2. ID selector
+  3. Class or Pseudo-class Selector
+  4. Element Selector
+  5. Universal Selector (*) -> applies styles to every single element NO Inheritance Involved
+
+  If there are multiple of each, then last selector in code applies.
+
+  It is a bit more complicated under the hood. (CSS Specificity)
+*/
+
+/* Inheritance and The Universal Selector
+
+  -> Is a mechanism by which some properties are passed down/ applied to child elements from parent elements
+  -> Not all properties get inherited, it mostly properties related to text.
+  -> An inherited rule is easily overritten by any rule which has a value for that same property
 */
