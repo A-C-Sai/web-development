@@ -7,11 +7,52 @@
 6. background: -color
 7. border: width style color
 8. cursor
+9. padding: top bottom left right
+10. padding: top&bottom left&right
+11. margin
 */
+
+* {
+  /* global reset*/
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: sans-serif;
   color: #444;
+  border-top: 10px solid #1098ad;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+  padding: 20px;
+  margin-bottom: 60px;
+}
+
+.title {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+nav {
+  font-size: 18px;
+}
+
+article {
+  margin-bottom: 60px;
+}
+
+.post-header {
+  margin-bottom: 40px;
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  padding: 50px 0;
+  width: 500px;
 }
 
 h1,
@@ -32,10 +73,13 @@ h1 {
 
 h2 {
   font-size: 50px;
+  margin-bottom: 30px;
 }
 
 h3 {
   font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 40px;
 }
 
 h4 {
@@ -46,10 +90,22 @@ h4 {
 p {
   font-size: 22px;
   line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+ul,
+ol {
+  margin-left: 50px;
+  margin-bottom: 20px;
 }
 
 li {
   font-size: 20px;
+  margin-bottom: 10px;
+}
+
+li:last-child {
+  margin-bottom: 0; /*No need to specify units just 0*/
 }
 
 /*descendant selector: selects all p elements inside the footer*/
@@ -84,16 +140,6 @@ Even if we use it only one, try using classes.*/
     3. #rrggbb
     4. When colors in all 3 channels are the same we get a grey color
 */
-
-.main-header {
-  background-color: #f7f7f7;
-}
-
-aside {
-  background-color: #f7f7f7;
-  border-top: 5px solid #1098ad;
-  border-bottom: 5px solid #1098ad;
-}
 
 /* li:first-child, li:last-child, li:nth-child(number/odd/even) pseudo-classes*/
 /* selects all li elements that are the first childs of it's parent elements  */
@@ -140,4 +186,22 @@ a:hover {
   -> Is a mechanism by which some properties are passed down/ applied to child elements from parent elements
   -> Not all properties get inherited, it mostly properties related to text.
   -> An inherited rule is easily overritten by any rule which has a value for that same property
+*/
+
+/* Box Model
+  -> describes how elements are displayed and sized
+
+  1. Content
+  2. Padding
+  3. Border
+  4. Margin
+  5. Fill Area
+
+  Default Behaviour : 
+    -> Final Element Width = left border + left padding + width + right padding + right border (likewise for Height)
+*/
+
+/* 
+  Try using either margin-bottom or margin-top to create vertical space. Beware of COLLAPSING MARGINS.
+  When two margins occupy the same space, only one of them will be visible.
 */
