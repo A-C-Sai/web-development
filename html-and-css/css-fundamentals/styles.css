@@ -10,6 +10,10 @@
 9. padding: top bottom left right
 10. padding: top&bottom left&right
 11. margin
+12. display
+13. position
+14. top, bottom, left, right
+15. content
 */
 
 * {
@@ -22,6 +26,7 @@
   /*centering page*/
   width: 1000px;
   margin: 0 auto;
+  position: relative;
 }
 
 body {
@@ -34,11 +39,37 @@ body {
   background-color: #f7f7f7;
   padding: 20px;
   margin-bottom: 60px;
-  height: 80px;
+}
+
+h2 {
+  position: relative;
+}
+
+h2::after {
+  content: "TOP";
+  background-color: #ffe70e;
+  color: #444;
+  position: absolute;
+  font-size: 15px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  top: -10px;
+  right: -25px;
 }
 
 nav {
   font-size: 18px;
+}
+
+nav a:link {
+  display: inline-block;
+  margin-right: 30px;
+  margin-top: 10px;
+}
+
+nav a:link:last-child {
+  margin-right: 0;
 }
 
 article {
@@ -212,4 +243,51 @@ a:hover {
   /* width: 800px;
   height: auto; if height attribute is set in html otherwise the other adapts to maintain aspect ratio.*/
   width: 100%; /*100% of the parent element*/
+}
+
+/* Types of Boxes
+  
+  -> Block Level Elements occupy 100% of the parent element's width and create line breaks after them i.e. stacked vertically by default. Box model behaves normally.
+
+  -> In-line elements occupy only the space necessary for its content; no line-breaks. Box model applies in a differrent way. Heights and Widths do not apply. Padding and margins are applied only horizintally.
+
+  -> In-line block, looks like inline from the outside, behaves like block-level on the inside. Occupies only the content's space. No line-breaks. Box-model applies normally.
+
+  -> Images are inline-block
+*/
+
+/* Positioning
+
+  -> Normal Flow "in flow". Elements are simply laid out according to their order in the HTML code. (relative)
+  -> Absolute Positioning. "out of flow". No impact on surrounding elements, might overlap them. We use top, bottom, left ot right to offset the element from its FIRST RELATIVELY positioned PARENT container. BY DEFAULT IT IS RELATIVE TO THE VIEWPORT.
+
+*/
+
+.like {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  padding: 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Pseudo-elements
+  -> don't exist in html can be selected in css and styled
+*/
+
+.title::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+/* p::first-line {
+  First line of every paragraph
+} */
+
+header + p::first-letter {
+  /*Adjacent sibiling selector*/
+  font-family: serif;
+  font-size: 50px;
+  font-weight: bold;
 }
