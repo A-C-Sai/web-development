@@ -18,6 +18,12 @@
   padding: 0;
 }
 
+.container {
+  /*centering page*/
+  width: 1000px;
+  margin: 0 auto;
+}
+
 body {
   font-family: sans-serif;
   color: #444;
@@ -28,11 +34,7 @@ body {
   background-color: #f7f7f7;
   padding: 20px;
   margin-bottom: 60px;
-}
-
-.title {
-  margin-top: 0px;
-  margin-bottom: 10px;
+  height: 80px;
 }
 
 nav {
@@ -205,3 +207,9 @@ a:hover {
   Try using either margin-bottom or margin-top to create vertical space. Beware of COLLAPSING MARGINS.
   When two margins occupy the same space, only one of them will be visible.
 */
+
+.post-image {
+  /* width: 800px;
+  height: auto; if height attribute is set in html otherwise the other adapts to maintain aspect ratio.*/
+  width: 100%; /*100% of the parent element*/
+}
