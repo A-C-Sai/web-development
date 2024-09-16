@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /* Destructuring Arrays
 const arr = [1, 2, 3];
@@ -24,10 +24,15 @@ console.log(k, l, m);
 */
 
 /* Destructuring Objects
+
 const {property-1, property-2, ..., property-n} = Object;
+In the above example the variable names have to match the original property names in the object, order doesn't matter
+
 const {property-1: aliasName, property-2: aliasName, ..., property-n: aliasName} = Object;
 
 -> can set default values to properties that may not exist [] (empty array)
+
+const {property-1: aliasName, property-2: aliasName = []} = Object;
 
 
 // mutating variables
@@ -50,24 +55,17 @@ const nestedObj = {
 const { fullName: { firstName: fName, lastName: lName = "" } } = nestedObj;
 console.log(fName, lName);
 
-
 // practical use
 const obj = {
-    greeting: function ({ firstName, lastName = "" }) {
-        console.log(`Greetings ${firstName} ${lastName}`);
-    }
-}
+  greeting: function ({ firstName, lastName = "" }) {
+    console.log(`Greetings ${firstName} ${lastName}`);
+  },
+};
 
 const person1 = {
-    lastName: "Potter",
-    firstName: "Harry"
-}
+  lastName: "Potter",
+  firstName: "Harry",
+};
 
 obj.greeting(person1);
 */
-
-
-
-
-
-
