@@ -266,7 +266,12 @@ const person = {
  * .startsWith("<substring>")
  * .endsWith("<substring>")
  * .split("<delimiter>") --> returns array
- * <arrayObj></arrayObj>
+ * <arrayObj>.join("<delimiter>")
+ * .padStart(total_length, pad_with)
+ * .padEnd(total_length, pad_with)
+ * String() --> type casting
+ * number + '' = string
+ * .repeat(number_of_times)
  */
 
 /* Challenge
@@ -394,5 +399,18 @@ const gameEvents = new Map([
 //     : (eventString = "[EXTRA TIME] " + eventString);
 //   console.log(eventString);
 // }
+
+// document.body.append(document.createElement("textarea"));
+// document.body.append(document.createElement("button"));
+
+// document.querySelector("button").addEventListener("click", function () {
+//   const variables = document.querySelector("textarea").value.split("\n");
+//   for (const varName of variables) {
+//     const [first, second] = varName.trim().split("_");
+//     console.log(
+//       `${first}${second.replace(second[0], second[0].toUpperCase())}`
+//     );
+//   }
+// });
 
 */
