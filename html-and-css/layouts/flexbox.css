@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .container {
@@ -86,7 +87,7 @@ h1 {
 }
 
 h2 {
-  font-size: 42px;
+  font-size: 50px;
   margin-bottom: 30px;
 }
 
@@ -99,7 +100,6 @@ h3 {
 h4 {
   font-size: 20px;
   text-align: center;
-  margin-bottom: 20px;
 }
 
 p {
@@ -181,75 +181,82 @@ header + p::first-letter {
   font-weight: bold;
 }
 
-/*####################################################*/
-/*FLOATS*/
-/*####################################################*/
-
-.author-img {
-  float: left; /*image will be taken out of normal flow, as if it isn't on the page, doesn't affect surrounding elements */
-  margin-bottom: 20px;
+/*FLEXBOX*/
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
+nav a:link {
+  margin-top: 0;
+}
+
+.article-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
 .author {
-  float: left; /*without this the p element will start behind the image and occupy the whole width of parent element as its a block element*/
+  margin-bottom: 0;
   margin-left: 20px;
-  margin-top: 10px;
-}
-
-/*Cloappsing elements, when all the children are set to float, it's as if the parent has no children*/
-h1 {
-  float: left;
-}
-
-nav {
-  float: right;
-}
-
-/* .clear { This method clutters HTML as we need to add a additional empty div
-  clear: both;
-} */
-
-.clearfix::after {
-  /* pseudo-elements by default are inline elements */
-  content: "";
-  clear: both;
-  display: block;
 }
 
 article {
-  float: left;
-  width: 825px;
   background-color: pink;
 }
-
 aside {
-  float: right;
-  width: 300px;
-  background-color: rgba(255, 166, 0, 0.499);
+  background-color: orange;
   padding: 50px 40px;
-  box-sizing: border-box; /*final width = specified width*/
 }
 
-footer {
-  clear: both;
+.related {
+  margin: 0;
+}
+
+h4 {
+  margin-bottom: 20px;
+}
+
+.related-article {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.related li:first-child {
+  font-weight: normal;
 }
 
 .related a:link,
 .related a:visited {
   display: block;
-  font-weight: normal;
   font-size: 15px;
+  margin-bottom: 5px;
 }
 
-.related a:hover,
-.related a:visited {
-  font-weight: bold;
-}
-
-.related p {
+.related-author {
   font-size: 12px;
+  margin-bottom: 0;
 }
 
-.related {
-  margin-left: 0;
+.content {
+  display: flex;
+  align-items: flex-start;
+  gap: 75px;
+  margin-bottom: 60px;
+}
+
+article {
+  /* flex: 0 0 825px; */
+  flex: 1; /*allows article to grow in the available space*/
+  margin-bottom: 0;
+}
+
+aside {
+  flex: 0 0 300px;
+}
+
+h2 {
+  font-size: 40px;
 }

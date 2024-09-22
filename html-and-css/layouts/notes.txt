@@ -1,0 +1,78 @@
+-> layout is the way test, images and other content is placed and arranged on a webpage
+-> gives page a visual structure
+-> page vs componenet layout
+-> float, flexbox, grid layouts
+
+Floats:
+-> element is removed from normal flow
+-> text and inline elements wrap around the floated element
+-> the container will not adjust its height to the element
+
+Flexbox:
+-> set of related CSS properties for building 1-D layouts
+-> empty space inside a container element can be automatically divided by its child elements
+-> makes it easier to align items to one another inside a parent container, horizontally and vertically
+-> vertical centering and equal-height columns
+-> Flex Continer[Flex Items]
+-> Main Axis, Cross Axis Both are perpendicular to each other, axis can be interchanged
+    
+    Flex Container:
+        1. gap: 0 | <length> To create space between items, without using margin
+
+        2. justify-content: flex-start | -end | space-between | -around | -evenly | center To aling items along the main axis (horizontally by default)
+
+        3. align-items: stretch | flex-start | flex-end | center | baseline To align items along cross axis (vertically, by default)
+
+        4. flex-direction: row | -reverse | column | -reverse To define which is the main axis
+
+        5. flex-wrap: nowrap | wrap | wrap-reverse To allow items to wrap into a new line if they are too large
+
+        6. align-content: stretch | flex-start | -end | space-between | -around | center Only applies where there are multiple lines (flex-wrap: wrap)
+
+    Flex Items:
+        1. align-self: auto | stretch | flex-start | -end | center | baseline To overwrite align-items for individual flex items
+
+        2. flex-grow: 0 | <integer> To allow an element to grow (0 means no, 1+ means yes) we can distribute to remaining space according to the number specified, e.g. 2 i.e. flex item will get double of the REMAINING SPACE than the other items
+
+        3. flex-shrink: 1 | <integer> To allow an element to shrink (0 means no, 1+ means yes)
+
+        4. flex-basis: auto | <length> To define an item's width, instead of the width property, flex items will have the specified width unless the content is larger than the width in which case the element extends to fit the content. Think of this as the recommended width.
+
+        5. flex: 0 1 auto | <int> <int> <int> Shortcut for flex-grow, -shrink, -basis
+
+        6. order: 0 | <integer> Controls order of items. -1 makes item first, 1 makes it last
+
+
+
+Grid:
+-> set of css properties for building 2-D layouts
+-> divide a container element into rows and columns that can be filled with its child elements
+-> we can use flexbox and grid in combination
+-> Grid Container[Grid Items]
+-> Row Axis, Column Axis, unlike flexbox axis cannot be interchanged
+-> Grid Lines 1 based index
+-> Grid Cells (might be filled by a grid item or not)
+-> Gutters (gaps)
+-> Grid Track (rows/columns)
+-> Explicit and Implicit Rows
+
+
+    Grid Container:
+        1. grid-template-rows, -columns: <track sixe>* To establish the grid row and column tracks. One length unit for each track. Any unit can be used, new fr unit fills unused/ remaining space. e.g. 2fr this row/column gets double the remaining space than other rows/columns. specifying auto will make the row/column take up only the necessary size for its content. repeat(num_cols/rows, size). There is a way to style implicit rows.
+
+        2. row-, column-gap: 0 | <length> To create empty space between tracks ("gap" is the Shortcut property)
+
+        3. justify-items: stretch | start | center | end
+           align-items: stretch | start | center | end
+
+           To aligh items inside rows / columns (inside cells) (horizontally / vertically) 
+        
+        4. justify-content, align-content To align entire grid inside grid container. Only applies if container is larger than the grid. i.e. aligining tracks inside container, distributing empty space.
+    
+    Grid Items:
+        1. grid-column: <start line>/<end line> | span <number>
+           grid-row: <start line>/<end line> | span <number> 
+
+           To place a grid item into a specific cell, based on line numbers. span keyword can be used to span an item across more cells.
+        
+        2. justify-self, align-self To overwrite justify-items/align-items for single items

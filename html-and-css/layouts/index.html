@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="stylesheet" href="./floats.css" /> -->
+    <!-- <link rel="stylesheet" href="./flexbox.css" /> -->
+    <link rel="stylesheet" href="./grid.css" />
+    <title>The Code Magazine</title>
+    <!-- <style>
+      h1 {
+        color: blue;
+      }
+    </style> -->
+  </head>
+  <body>
+    <div class="container">
+      <header class="main-header clearfix">
+        <!-- <h1 style="color: blue">📘 The Code Magazine</h1> -->
+        <h1 class="title">📘 The Code Magazine</h1>
+        <!--Each and every page should have only one h1 (primary) heading-->
+        <nav>
+          <a href="#">Blog</a>
+          <a href="#">Challenges</a>
+          <a href="#">Flexbox</a>
+          <a href="#">CSS Grid</a>
+        </nav>
+        <!-- <div class="clear"></div> -->
+      </header>
+      <div class="content">
+        <article>
+          <header class="post-header">
+            <h2>The Basic Language of the Web: HTML</h2>
+            <div class="article-info">
+              <img
+                src="./assets/laura-jones.jpg"
+                alt="laura jones profile picture"
+                width="50"
+                class="author-img"
+              />
+              <p id="author" class="author">
+                Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027
+              </p>
+            </div>
+            <img
+              src="./assets/post-img.jpg"
+              alt="HTML code on a screen"
+              width="500"
+              class="post-image"
+            />
+            <button class="like">❤️ Like</button>
+          </header>
+          <p>
+            All modern websites and web applications are built using three
+            <em>fundamental</em>
+            technologies: HTML, CSS and JavaScript. These are the languages of
+            the web.
+          </p>
+          <p>
+            In this post, let's focus on HTML. We will learn what HTML is all
+            about, and why you too should learn it.
+          </p>
+          <h3>What is HTML?</h3>
+          <p>
+            HTML stands for <strong>H</strong>yper<strong>T</strong>ext
+            <strong>M</strong>arkup <strong>L</strong>anguage. It's a markup
+            language that web developers use to structure and describe the
+            content of a webpage (not a programming language).
+          </p>
+          <p>
+            HTML consists of elements that describe different types of content:
+            paragraphs, links, headings, images, video, etc. Web browsers
+            understand HTML and render HTML code as websites.
+          </p>
+          <p>In HTML, each element is made up of 3 parts:</p>
+          <ol>
+            <!--Ordered List-->
+            <li>The opening tag</li>
+            <!--List item-->
+            <li>The closing tag</li>
+            <li>The actual element</li>
+          </ol>
+          <p>
+            You can learn more at the
+            <a href="https://developer.mozilla.org/en-US/" target="_blank"
+              >MDN Web Docs</a
+            >.
+          </p>
+          <h3>Why should you learn HTML?</h3>
+          <p>
+            There are countless reasons for learning the fundamental language of
+            the web. Here are 5 of them:
+          </p>
+          <ul>
+            <!--Unordered List-->
+            <li>To be able to use the fundamental web dev language</li>
+            <li>
+              To hand-craft beautiful websites instead of relying on tools like
+              Worpress or Wix
+            </li>
+            <li>To build web applications</li>
+            <li>To impress friends</li>
+            <li>To have fun 😃</li>
+          </ul>
+          <p>Hopefully you learned something new here. See you next time!</p>
+        </article>
+        <aside>
+          <h4>Related posts</h4>
+          <ul class="related">
+            <li class="related-article">
+              <img src="./assets/related-1.jpg" alt="A man coding" width="75" />
+              <div class="related-article-info">
+                <a href="#" class="related-link"
+                  >How to Learn Web Development</a
+                >
+                <p class="related-author">By Jonas Schmedtmann</p>
+              </div>
+            </li>
+            <li class="related-article">
+              <img src="./assets/related-2.jpg" alt="Lightning" width="75" />
+              <div class="related-article-info">
+                <a href="#" class="related-link">The Unknown Power of CSS</a>
+                <p class="related-author">By Jim Dillon</p>
+              </div>
+            </li>
+            <li class="related-article">
+              <img
+                src="./assets/related-3.jpg"
+                alt="JavaScript code on computer screen"
+                width="75"
+              />
+              <div class="related-article-info">
+                <a href="#" class="related-link">Why JavaScript is Awesome</a>
+                <p class="related-author">By Matilda</p>
+              </div>
+            </li>
+          </ul>
+        </aside>
+      </div>
+      <footer>
+        <p id="copyright">
+          Copyright &copy;
+          <!--HTML Entity-->
+          2027 by The Code Magazine
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
