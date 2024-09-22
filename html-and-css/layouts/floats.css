@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+body {
+  font-family: sans-serif;
+  color: #444;
+  border-top: 10px solid #1098ad;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+  padding: 20px;
+  margin-bottom: 60px;
+}
+
+h2 {
+  position: relative;
+}
+
+h2::after {
+  content: "TOP";
+  background-color: #ffe70e;
+  color: #444;
+  position: absolute;
+  font-size: 15px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  top: -10px;
+  right: -25px;
+}
+
+nav {
+  font-size: 18px;
+  text-align: center;
+}
+
+nav a:link {
+  display: inline-block;
+  margin-right: 30px;
+  margin-top: 10px;
+}
+
+nav a:link:last-child {
+  margin-right: 0;
+}
+
+article {
+  margin-bottom: 60px;
+}
+
+.post-header {
+  margin-bottom: 40px;
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  padding: 50px 0;
+  width: 500px;
+}
+
+h1,
+h4 {
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  color: #1098ad;
+}
+
+h1 {
+  font-size: 26px;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 42px;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+h4 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+ul,
+ol {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
+li {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+#copyright {
+  font-size: 16px;
+}
+
+#author {
+  font-size: 18px;
+  font-style: italic;
+}
+
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.related {
+  list-style: none;
+}
+
+li:first-child {
+  font-weight: bold;
+}
+
+a:link,
+a:visited {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline orangered;
+}
+
+.post-image {
+  width: 100%;
+}
+
+.like {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  padding: 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.title::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+header + p::first-letter {
+  font-family: serif;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+/*####################################################*/
+/*FLOATS*/
+/*####################################################*/
+
+.author-img {
+  float: left; /*image will be taken out of normal flow, as if it isn't on the page, doesn't affect surrounding elements */
+  margin-bottom: 20px;
+}
+
+.author {
+  float: left; /*without this the p element will start behind the image and occupy the whole width of parent element as its a block element*/
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+/*Cloappsing elements, when all the children are set to float, it's as if the parent has no children*/
+h1 {
+  float: left;
+}
+
+nav {
+  float: right;
+}
+
+/* .clear { This method clutters HTML as we need to add a additional empty div
+  clear: both;
+} */
+
+.clearfix::after {
+  /* pseudo-elements by default are inline elements */
+  content: "";
+  clear: both;
+  display: block;
+}
+
+article {
+  float: left;
+  width: 825px;
+  background-color: pink;
+}
+
+aside {
+  float: right;
+  width: 300px;
+  background-color: rgba(255, 166, 0, 0.499);
+  padding: 50px 40px;
+  box-sizing: border-box; /*final width = specified width*/
+}
+
+footer {
+  clear: both;
+}
+
+.related a:link,
+.related a:visited {
+  display: block;
+  font-weight: normal;
+  font-size: 15px;
+}
+
+.related a:hover,
+.related a:visited {
+  font-weight: bold;
+}
+
+.related p {
+  font-size: 12px;
+}
+
+ul {
+  margin-left: 0;
+}
