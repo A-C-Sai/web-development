@@ -1,0 +1,13 @@
+Good Design:
+-> immediate and lasting good impression of brand/ product
+-> trust with brand
+-> increased user's perceived value of brand/ product
+-> gives users exactly what they were looking for
+
+Typography:
+-> ToolBox: google fonts, font squirrel, https://typescale.com/
+-> making text beautiful and easy to read 
+-> serifs: traditional/ classic look and feel, trustworthiness, good for long text
+-> sans-serif: modern look and feel, clean and simple
+-> reading experience: the smaller or longer the text, the larger the line height needs to be
+-> establishing hirearchy
