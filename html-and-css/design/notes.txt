@@ -37,3 +37,6 @@ Shadows:
 -> can be used on boxes and text
 -> shadows don't have to be black (glows)
 -> can create illusions e.g. push down button, hovering
+
+Border-Radius:
+-> serious/elegant -----> playful/fun
