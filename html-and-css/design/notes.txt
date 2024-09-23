@@ -18,3 +18,9 @@ Colors:
 -> main color and grey color (doesn't need to be grey, can be a very dark version of another color)
 -> accent color
 -> contrast ratio needs to be atleast 4.5:1 for normal test and 3:1 for large text (18px+)
+
+Images & Illustrations;
+-> ToolBox: Unsplash, Pexels, DrawKit, unDraw, squoosh
+-> To account for high-res screens, make image dimensions 2x as big as their displayed size
+-> Scale factor: Actual pixels the screen contains/ Pixels represented on screen
+-> On high-res screens, scale factor is 2x or even 3x, on "normal" screens it's just 1x (1 physical pixel = 1 design pixel)
