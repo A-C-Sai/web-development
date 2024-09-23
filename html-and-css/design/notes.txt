@@ -55,3 +55,17 @@ Whitespace and Visual Hierarchy:
 -> we can also de-emphasize less important text, like labels or secondary/additional info
 -> try emphasizing some component A over component B by de-emphasizing component B.
 
+
+User Experience:
+-> UI (looks and feels like), UX (how it works)
+-> both of these are interlinked
+-> A website or applications exists for a reason: a user has a goal for visiting it, and a business has a goal for creating it
+-> Good UX design aligns the user's goals with the business' goals
+-> law of locality
+
+
+Inspiration:
+-> land-book
+-> one page love
+-> awwwards
+-> screenlane
