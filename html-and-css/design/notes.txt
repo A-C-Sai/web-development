@@ -11,3 +11,10 @@ Typography:
 -> sans-serif: modern look and feel, clean and simple
 -> reading experience: the smaller or longer the text, the larger the line height needs to be
 -> establishing hirearchy
+
+Colors:
+-> ToolBox: Open Color, tailwindcss, flat ui colors 2, tint & shade generator, palleton, coolors
+-> choosing a main color that matches website's personality, use a good color tone
+-> main color and grey color (doesn't need to be grey, can be a very dark version of another color)
+-> accent color
+-> contrast ratio needs to be atleast 4.5:1 for normal test and 3:1 for large text (18px+)
