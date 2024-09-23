@@ -24,3 +24,10 @@ Images & Illustrations;
 -> To account for high-res screens, make image dimensions 2x as big as their displayed size
 -> Scale factor: Actual pixels the screen contains/ Pixels represented on screen
 -> On high-res screens, scale factor is 2x or even 3x, on "normal" screens it's just 1x (1 physical pixel = 1 design pixel)
+
+Icons:
+-> ToolBox: Phosphor icons, ionicons, icons8, heroicons
+-> visual accistance to text
+-> product feature blocks
+-> associated with actions and label them unless no space or icon is 100% clear
+-> as bullet points
