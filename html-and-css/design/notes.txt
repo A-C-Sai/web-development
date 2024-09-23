@@ -31,3 +31,9 @@ Icons:
 -> product feature blocks
 -> associated with actions and label them unless no space or icon is 100% clear
 -> as bullet points
+
+Shadows:
+-> creates depth, the more shadow, the further away from the interface the element is 
+-> can be used on boxes and text
+-> shadows don't have to be black (glows)
+-> can create illusions e.g. push down button, hovering
