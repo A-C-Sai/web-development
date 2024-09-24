@@ -1,0 +1,133 @@
+-> Properties in CSS are attributies you can specify values for.
+-> Selector us a descriptor that lets you target specific elements on the page.
+-> Declaration is a combination of a property and a value.
+-> Rule, also knowwn as a style, is a collection of declarations, 
+   targeting one or more selectors. A stylesheet is made up of multiple rules.
+
+-> Some values have units, like px, %, or em.
+
+-> In order to accommodate screens of different shapes and sizes, CSS features media queries, which allow us to apply different CSS in different scenarios.
+
+-> @media(condition){
+    Some CSS that'll run if the condition is met
+}
+
+###################################################################################
+
+-> it's common to use media queries to have alternative interfaces depending on the screen size e.g. pften used for navigation. Desktop users see a list of links, whereas mobile users see a hamburger icon.
+
+-> inside the parentheses, we typically use either max-width to add styles on small screens, or min-width to add styles on larger ones.
+
+-> In the context of media query, max-width is a "media feature", not a CSS property.
+
+-> Not all CSS properties have a corresponding media features.
+
+-> CSS comes with an incredibly rich set of selectors, and those selectors can be mixed and matched in intresting ways. Within the modern JS ecosystem, however, we often rely on tooling to generate these selectors for us.
+
+###################################################################################
+
+-> Pseudo-Classes let us apply a chunk of CSS based on an element's current state.
+
+-> HTML comes with interactive elements like buttons, links, and form inputs. When we interact with one of these elements (either by clicking on it or tabbing to it), it becomes focused. It'll capture keyboard input, so we can type into a form field or press Enter to follow a link. The :focus pseudo-class allows us to apply styles exclusively when an interactive element has focus.
+
+-> For most users, a button can be focused by clicking on it. Focus can then be moved between buttons by pressing "Tab" or Shift+Tab.
+
+-> On macOs:
+    -> on safari, clicking a button won't focus it. This is a known bug.
+    -> on safari, Tab skips buttons and links. Need to use Option+Tab and Option+Shift+Tab to tab b/w buttons.
+    -> on certain versions of Firefox on macOs, Tab skips links, and only navigates b/w buttons and form fields
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#clicking_and_focus
+    https://www.scottohara.me/blog/2014/10/03/link-tabbing-firefox-osx.html
+
+-> Focus styles are primarily useful for folks who don't use a "pointer-style" input device. The focus styles show you where you are on the page, which element is selected.
+
+-> Browsers do come with default focus styles. Typically it's either a bule or dotted outline. Don't add outline: none to get rid of the focus outlines unless it is being replaced with an even more prominent set of styles. https://a11y.coffee/
+
+-> The :checked pseudo-class only applies to checkboxes and radio buttons that are "filled in". You can apply additional styles to indicate that the input is activated.
+
+-> pseudo-classes aren't just for states, they can also help us apply contidional logic.
+
+-> The :last-chid pseudo-class will only select the <element> tags which are the final element within its container. It needs to be the last child within its parent. Similarly, the :first-child pseudo-class will match the first child within a parent container.
+
+-> :first-of-type and :last-of-type, depends on the type of the HTML tag. Ignores any siblings that aren't of the same type.
+
+###################################################################################
+
+-> Pseudo-elements target "sub-elements" within an element.
+
+<label>
+    Postal Code:
+    <input 
+        type="text" 
+        placeholder="3124"
+    />
+</label>
+
+-> with ::placeholder we can style the placeholder text in a form input.
+
+-> pseudo-elements use teo colons, though some pesudo-elements also support single-colon syntax.
+
+-> These selectors target elements in the DOM that we haven't explicitly created with HTML tags.
+
+-> placeholders are typically very light. They aren't meant to contain critical information. They're meant to provide an example about how to format their data. They should never be used to label an input, use a <label></label> element instead. We should build forms that are flexible and support a wide range of user inputs, we can apply tranformations on the entered data using javascript. If they do enter invalid data, a helpful error message should be shpwn. It should explain what the user did wrong, and how to fix it. And it should be bright and high-contrast. If we were to remove all of the placeholders from the form, it should still be usable and easy to fill, if not, there is work to be done.
+
+-> ::before and ::after pseudo-elements are added inside the element, right before and after the element's content. They are really just secret spans. We probably shouldn't use these two pseudo-elements. There are also some accessibility concerns with these pseudo-elements espicially with screen readers having inconsistencies in handling these elements.
+
+###################################################################################
+
+-> The term Combinator refers to a character that combines multiple selectors.
+-> space: descendant selector. will apply to all descendants, no matter how deeply nested they are.
+-> >: looks for direct children
+
+###################################################################################
+
+-> HEX CODES, KEYWORDS, RGB, HSL
+-> https://www.joshwcomeau.com/css/color-formats/
+
+-> HSL color format (Hue[0deg,360deg]/Saturation[0%,100%]/Lightness[0%,100%])
+-> Uniform brightness is a problem in HSL, humans percieve colors differently.
+-> hsl(hue saturation lightness / opacity), the / character is about separation.
+-> hsl(hue,saturation,lightness)
+-> hsla(hue,saturation,lightness,opacity)
+
+###################################################################################
+
+-> Pixles are nice b/c they correspond more-or-less with what you see on the screen (high-density displays work differently)
+
+-> The em unit is a relative unit. It is equal to the font size of the current element. It can be very suprising when a tweak to font-size affects the spacing of descendant elements. This is especially true when it comes to modern component architectures. Using em means that a component's UI will change depending on the font size of the container it's placed within. Can be a nuisance.
+
+-> The rem unit is quite a lot like the em unit BUT it's always relative to the root element, the <html> tag. By default, the HTML tag has a font size of 16px, so 1rem = 16px. The rem behaves consistently and predictably, like px, but it respects user preferences when it comes to increasing/decreasing default font sizes. 
+
+-> We shouldn't actually set a px font size on the html tag. This will override a user's chosen default font size. If we really want to change the baseline font size for rem units, we can do that using percentages 100%=16px.
+
+-> Percentage unit is often used with width/height, as a way to consume a portion of the available space.
+
+https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/
+ 
+###################################################################################
+
+-> We can change which font is used with the font-family property.
+-> it's called a "family" b/c each font consists of multiple character sets.
+-> There are a handful of "web safe fonts". These are fonts that come pre-installed on all major operating systems.
+
+-> Font families come in different styles. Most Popular: Serif, Sans-serif, Monospace...
+-> By passing a category instead of a specific font, the OS will use its default system font from this category.
+
+-> A web font is a custome font that we load in our CSS. We can drop a snippet into our HTML which will download this custom font onto the user's device, when they visit our site/app. This HTML snippet will make the web font available for us to use in our CSS.
+
+-> when using a web font, it's customary to surround its name in quotation marks. We can speficy multiple comma-separated fonts which is known as a "font stack". The idea is that the browser will use the first available font from the list. In production settings, we will likely wish to self-host the web-fonts, for optimal performance and GDPR compliance.
+
+-> we can create bold text with font-weight property. There's a numbering system from 1 to 1000, which lets us control the font weight more precisely. The default value for font weight is 400, and the bold keyword maps to 700. of we only supply a single font weight, the browser will do its best to represent bold test by thickening the characters and it doesn't do a great job.
+
+-> Emphasis is generally represented by slanting the text at an angle. We can achieve this using font-style: italic;
+The browser can simulate italic text by rendering characters at an angle BUT for best results, we should supply an italic character set.
+
+-> Underlines tend to mean links. Not all links need underlines. We can use the text-decoration property.
+
+-> CSS allows us to change the cosmetic presentation of text, but it doesn;t affect the semantic meaning of the markup. Semantics are important b/c not everyone can see the cosmetic styles.
+
+-> We can shift characters horizontally using the text-align property. This property is also capable of aligning other elements, like images BUT we should reserve this property for text. We should exercise caution when applying alignment in international products that support right-to-left languages.
+
+-> we can fomat our text using the text-transform property.
+
+-> we can tweak the spacing of characters in two ways, letter-spacing and line-height (unitless number, this number is multiplied by the element's font-size to calc the actual line height). To comply with accessibility guidlines, our body text should have a minimum line-height of 1.5. https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html It's possible to pass other unit types, but its recommended always using this unitless number, so that the line-height always scales with the element's font-size.
