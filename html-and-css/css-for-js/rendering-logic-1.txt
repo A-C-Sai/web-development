@@ -1,0 +1,150 @@
+-> We don't start with a blank canvas, HTML tags do include a few minimal styles. These styles are part of the user-agent stylesheet ("built-in" styles). Each browser includes their own stylesheet full of base styles.
+
+-> certain CSS properties inherit. Most of the properties that inherit are typography-related.
+https://www.sitepoint.com/css-inheritance-introduction/#list-css-properties-inherit
+
+-> we may wish to have a property inherit even when it wouldn;t normally do so. e.g. link colors. Even though color is an inheritable property, it's being overwritten by the default style. We can fic this by explicitly telling anchor tags to inherit their containing text color. color: inherit;
+
+#########################################################################
+
+-> The cascade algorithm.
+-> When the browser needs to disply an element on the screen, it first needs to figure out which declarations apply to it. And b4 it can do that, it needs to collect a set of matching rules. Once it has a list of applicable rules, it works out any conflicts and whittles it down to a list of specific declarations that are applicable. The specificity of the selector will determine which rule win the battle.
+-> CSS language includes many different selectors, and each selector has a relative power.
+-> How can we implement the cascade in JS, spread syntax. Treat each rule as an object, and an final object called appliedStyles in which we use the spread operator to unpack the related styles. The order thst they're merged in is determined by specificity.
+-> https://2019.wattenberger.com/blog/css-cascade
+
+#########################################################################
+
+-> CSS has block direction (vertical) and an inline direction (horizontal)
+-> https://24ways.org/2016/css-writing-modes/
+-> Logical Properties: margin-block-start (margin-top), margin-block-end (margin-bottom), margin-inline-start (margin-left), margin-inline-end (margin-right). Why these alternatives? Not all languages are left-to-right, top-to-bottom.
+
+#########################################################################
+
+-> The Box Model: Content, Padding, Border, Margin 
+-> The box-sizing CSS property allows us to change the rules for size calculations. The default value (content-box) only takes the inner content into account, but it offers an alternative value, border-box.
+-> We can comment a declaration in CSS and toggle it on and off in the devtools, useful for experimentation.
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+-> * will select all elements, but ::before and ::after aren't considered elements.
+
+-> When applying padding, we can pick from a pretty wide range of units. The most common ones are: px, em, rem
+-> px are the best unit to use for padding, padding stays consistent and text size is the only thing that scales. As long as the text is big enough and as long as there is sufficient distance b/w the text, other than that we don't need to scale, if we do we can use the browser zoom.
+-> we can use percentages for padding. percentages are always calculated based on the element's available width. This is true for left/right padding, and even for top/bottom padding.
+-> padding: top/bottom left/right  OR top right bottom left;
+-> when fewer than 4 values are passed, it "fills in the gaps"
+-> "long-form" properties can overwrite the relevant value in shorthand properties. The order matters! The overwrite has to come after the shorthand, otherwise it won't have any effect.
+
+
+-> broder: border-width border-style border color
+-> the only required field is border-style.
+-> there are a wide variety of border styles
+-> if we don't specify a border color, it'll default to using the element's text color.
+
+<style>
+.box{
+
+}
+
+.box.one{
+
+}
+.box.two{
+
+}
+.box.three{
+
+}
+
+</style>
+
+<div class="box one"></div>
+<div class="box two"></div>
+<div class="box three"></div>
+
+-> "currentColor" keyword, is always a reference to the element's derived text color, and it can be used anywhere a color might be used.
+-> https://wiki.csswg.org/ideas/mistakes
+-> border-radius property focused on specific corners.
+->border-top-left-radius, border-top-right-radius, border-bottom-right-radius, border-bottom-left-radius
+-> we can also use percentages.
+
+-> outline doesn't affect layout. oultine is kinda more like box-shadow; it's a cosmetic effect draped over an element, without nudging it around, or changing its size. outline, outline-width, outline-style, outline-color. outlines are stacked outside border. outlines will follow the curve set with border-radius. outlines have a special outline-offset property.
+-> outlines are sometimes used as focus indicators, for ppl who use non-pointer devices, we shoud avoid tweaking outlines on interactive elements like buttons or links.
+
+
+-> margin increases the space around an element.
+-> with padding and border, only positive numbers (including 0) are supported. with margin we can drop into the negatives. A negative margin can pull an element outside its parent. It can also pull an element's sibling closer. DON'T think that margin is about changing the selected element's position, it's about changing the gap b/w elements. Negative margin can affect the position of all siblings. When we use margin to tweak an element's position we might also be tweaking every subsequent element as well
+-> https://www.quirksmode.org/blog/archives/2020/02/negative_margin.html
+-> margins can be used to center a child in a container. When the left and right margins are set to auto. Auto value seeks to fill the maximum available space. Only works for horizontal margins. setting top/bottom margin to auto is equivalent to setting it to 0px atleast in default layout. This only workd on elements with an explicit width.
+
+
+<style>
+  body {
+    background: #222;
+    padding: 32px;
+  }
+
+  .card {
+    background-color: white;
+    /* padding: 32px; */
+    padding: 32px;
+    border-radius: 8px;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+
+  }
+
+  p, img {
+    margin-bottom: 16px;
+  }
+
+  .img-holder{
+    margin-left:-32px;
+    margin-right: -32px;
+  }
+  
+  /* p{
+    padding: 32px;
+  } */
+</style>
+
+<div class="card">
+  <p>
+    Otters have long, slim bodies and relatively short limbs. Their most striking anatomical features are the powerful webbed feet used to swim, and their seal-like abilities holding breath underwater.
+  </p>
+  <div class="img-holder">
+  <img alt="A cute otter in water" src="https://courses.joshwcomeau.com/cfj-mats/otter.jpg" />
+  </div>
+  <p>
+    More importantly, otters are glorious water dogs, playful and curious. The otter, no other, is the best animal.
+  </p>
+</div>
+
+
+|                           |
+|     bla bla text text     |
+|     more text and bla     |
++---------------------------+
+|IMAGE IMAGE IMAGE IMAGE IMA|
+|GE IMAGE IMAGE IMAGE IMAGE |
+|IMAGE IMAGE IMAGE IMAGE IMA|
++---------------------------+
+|     and the text goes     |
+|     on and on and on.     |
+|                           |
+
+-> In the about layout, the img-holder div will do the stretching and the imaage will just fill the container.
+
+-> the default value for the width property is auto. For most elements this means automatically grow to fill as much space as possible. Images are "replaced elements" they dont automatically expand to fill the avail space. Instead they rely on their intrinsic size. In case of replace elements it means use your natural width.
+
+#########################################################################
+
+
