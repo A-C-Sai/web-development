@@ -147,4 +147,28 @@ https://www.sitepoint.com/css-inheritance-introduction/#list-css-properties-inhe
 
 #########################################################################
 
+-> Every HTML element will have its layout calculated by a layout algorithm. These are known as layout modes. Flow layout is the default mode.
 
+-> A replaced element is one that embeds a "foreign" object. This includes: <img/>, <video/>, <canvas/>. These elements are all technivally inline, but they're special: they can affect block layout. You can give them explicit dimensions, or add some margin-top. Think of it as a foreign object within an inline wrapper. When we pass it a width or height, we are applying those properties to the foreign object. The inline wrapper still goes with the flow.
+
+-> width: fit-content;
+-> elements that are display: block; will stack in the block direction, regardless of their size.
+
+-> inline elements have "magic space", the browser treats inline elements as if they're typography. it makes sense that with text, you'd want a bit of extra space, so that the lines in a paragraph aren't crammed in too tightly.
+
+-> solution: set images to display: block; OR set the line-height:0; on the wrapping div.
+
+-> space b/w inline elements. This spqace is caused by the whitespace b/w elements. if we squish our HTML so that there are no newlines or whitespace characters b/w images, the problem goes away. This happens b/c HTML is space-sensitive, at least to an extent. The browser can't tell the difference b/w whitespace added to separate words in a paragraph, and whitespace added to indent our HTML and keep it redable. This issue is specific to flow layout. Other layout modes ignore whitespace altogether.
+
+-> inline elements can lin-wrap. Inline elements can produce shapes other then boxes. Block-level elements may appear as different shapes but as far as layout and positioning is concerned block-level elements are always rectangles. it's worth noting that it's still considered "one-shape".
+
+-> An inline-block element is a block-level element that can be placed in an inline context. In terms of layout, it's treated as an inline elment. But internally, it acts much more like a block element.
+
+-> Inline-block doesn't wrap. Descriptive link text is important for accessibility.
+-> https://www.a11yproject.com/posts/creating-valid-and-accessible-links/
+
+#########################################################################
+
+-> When we use percentage-based widths, those percentages are based on the parent element's content space. The element will occupy 100% of the parent element's content space regardless of any other circumstances. This calculation happens first, b4 the margin is applied.
+
+-> Block elements have a default width value of auto, not 100%. withd: autol it's a hungry value that will grow as much as it's able to, but no more. By default, block elements have dynamic sizing. They're context-aware.
