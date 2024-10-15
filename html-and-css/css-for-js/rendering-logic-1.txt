@@ -3,7 +3,7 @@
 -> certain CSS properties inherit. Most of the properties that inherit are typography-related.
 https://www.sitepoint.com/css-inheritance-introduction/#list-css-properties-inherit
 
--> we may wish to have a property inherit even when it wouldn;t normally do so. e.g. link colors. Even though color is an inheritable property, it's being overwritten by the default style. We can fic this by explicitly telling anchor tags to inherit their containing text color. color: inherit;
+-> we may wish to have a property inherit even when it wouldn't normally do so. e.g. link colors. Even though color is an inheritable property, it's being overwritten by the default style. We can fix this by explicitly telling anchor tags to inherit their containing text color. color: inherit;
 
 #########################################################################
 
@@ -34,14 +34,14 @@ https://www.sitepoint.com/css-inheritance-introduction/#list-css-properties-inhe
 -> * will select all elements, but ::before and ::after aren't considered elements.
 
 -> When applying padding, we can pick from a pretty wide range of units. The most common ones are: px, em, rem
--> px are the best unit to use for padding, padding stays consistent and text size is the only thing that scales. As long as the text is big enough and as long as there is sufficient distance b/w the text, other than that we don't need to scale, if we do we can use the browser zoom.
+-> px are the best unit to use for padding, padding stays consistent and text size is the only thing that scales. As long as the text is big enough and as long as there is sufficient distance b/w the text, other than that we don't need to scale, if we do, we can use the browser zoom.
 -> we can use percentages for padding. percentages are always calculated based on the element's available width. This is true for left/right padding, and even for top/bottom padding.
 -> padding: top/bottom left/right  OR top right bottom left;
 -> when fewer than 4 values are passed, it "fills in the gaps"
 -> "long-form" properties can overwrite the relevant value in shorthand properties. The order matters! The overwrite has to come after the shorthand, otherwise it won't have any effect.
 
 
--> broder: border-width border-style border color
+-> broder: border-width border-style border-color
 -> the only required field is border-style.
 -> there are a wide variety of border styles
 -> if we don't specify a border color, it'll default to using the element's text color.
@@ -80,7 +80,7 @@ https://www.sitepoint.com/css-inheritance-introduction/#list-css-properties-inhe
 -> margin increases the space around an element.
 -> with padding and border, only positive numbers (including 0) are supported. with margin we can drop into the negatives. A negative margin can pull an element outside its parent. It can also pull an element's sibling closer. DON'T think that margin is about changing the selected element's position, it's about changing the gap b/w elements. Negative margin can affect the position of all siblings. When we use margin to tweak an element's position we might also be tweaking every subsequent element as well
 -> https://www.quirksmode.org/blog/archives/2020/02/negative_margin.html
--> margins can be used to center a child in a container. When the left and right margins are set to auto. Auto value seeks to fill the maximum available space. Only works for horizontal margins. setting top/bottom margin to auto is equivalent to setting it to 0px atleast in default layout. This only workd on elements with an explicit width.
+-> margins can be used to center a child in a container. When the left and right margins are set to auto. Auto value seeks to fill the maximum available space. Only works for horizontal margins. setting top/bottom margin to auto is equivalent to setting it to 0px atleast in default layout. This only works on elements with an explicit width.
 
 
 <style>
@@ -141,7 +141,7 @@ https://www.sitepoint.com/css-inheritance-introduction/#list-css-properties-inhe
 |     on and on and on.     |
 |                           |
 
--> In the about layout, the img-holder div will do the stretching and the imaage will just fill the container.
+-> In the above layout, the img-holder div will do the stretching and the imaage will just fill the container.
 
 -> the default value for the width property is auto. For most elements this means automatically grow to fill as much space as possible. Images are "replaced elements" they dont automatically expand to fill the avail space. Instead they rely on their intrinsic size. In case of replace elements it means use your natural width.
 
@@ -149,18 +149,17 @@ https://www.sitepoint.com/css-inheritance-introduction/#list-css-properties-inhe
 
 -> Every HTML element will have its layout calculated by a layout algorithm. These are known as layout modes. Flow layout is the default mode.
 
--> A replaced element is one that embeds a "foreign" object. This includes: <img/>, <video/>, <canvas/>. These elements are all technivally inline, but they're special: they can affect block layout. You can give them explicit dimensions, or add some margin-top. Think of it as a foreign object within an inline wrapper. When we pass it a width or height, we are applying those properties to the foreign object. The inline wrapper still goes with the flow.
+-> A replaced element is one that embeds a "foreign" object. This includes: <img/>, <video/>, <canvas/>. These elements are all technically inline, but they're special: they can affect block layout. You can give them explicit dimensions, or add some margin-top. Think of it as a foreign object within an inline wrapper. When we pass it a width or height, we are applying those properties to the foreign object. The inline wrapper still goes with the flow.
 
 -> width: fit-content;
 -> elements that are display: block; will stack in the block direction, regardless of their size.
 
 -> inline elements have "magic space", the browser treats inline elements as if they're typography. it makes sense that with text, you'd want a bit of extra space, so that the lines in a paragraph aren't crammed in too tightly.
-
 -> solution: set images to display: block; OR set the line-height:0; on the wrapping div.
 
 -> space b/w inline elements. This spqace is caused by the whitespace b/w elements. if we squish our HTML so that there are no newlines or whitespace characters b/w images, the problem goes away. This happens b/c HTML is space-sensitive, at least to an extent. The browser can't tell the difference b/w whitespace added to separate words in a paragraph, and whitespace added to indent our HTML and keep it redable. This issue is specific to flow layout. Other layout modes ignore whitespace altogether.
 
--> inline elements can lin-wrap. Inline elements can produce shapes other then boxes. Block-level elements may appear as different shapes but as far as layout and positioning is concerned block-level elements are always rectangles. it's worth noting that it's still considered "one-shape".
+-> inline elements can line-wrap. Inline elements can produce shapes other than boxes. it's worth noting that it's still considered "one-shape". Block-level elements may appear as different shapes but as far as layout and positioning is concerned block-level elements are always rectangles. 
 
 -> An inline-block element is a block-level element that can be placed in an inline context. In terms of layout, it's treated as an inline elment. But internally, it acts much more like a block element.
 
@@ -171,4 +170,22 @@ https://www.sitepoint.com/css-inheritance-introduction/#list-css-properties-inhe
 
 -> When we use percentage-based widths, those percentages are based on the parent element's content space. The element will occupy 100% of the parent element's content space regardless of any other circumstances. This calculation happens first, b4 the margin is applied.
 
--> Block elements have a default width value of auto, not 100%. withd: autol it's a hungry value that will grow as much as it's able to, but no more. By default, block elements have dynamic sizing. They're context-aware.
+-> Block elements have a default width value of auto, not 100%. width: auto it's a hungry value that will grow as much as it's able to, but no more. By default, block elements have dynamic sizing. They're context-aware.
+
+-> there are two kinds of values we can specify for width: measurements, keywords.
+
+1. min-content: We want our element to become as narrow as possible, based on the child elements. We aren't sizing based on the space made available by the parent, we are sizing based on the element's children. This is known as a intrinsic value. We are focusing on the element itself. Whenever it encounters whitespace or a hyphenated word, it will break into a new line.
+
+2. max-content: It never adds any line-breaks. Pays no attention to the constraints set by the parent. It will size the element based purely on the length of its unbroken children. Useful when we want to add background color only around the letters.
+
+3. fit-content: If the width can fit within the parent container, it behaves just like max-content, not adding any line-breaks. If the content is too wide to fit in the parent, it adds line-breaks as-needed to ensure it never exceeds the available space. It behaves like width: auto.
+
+-> we can add constraints to an elements size using min-width and max-width, these allow us to mix units. We can set constraints in px, but set percentage width.
+
+-> display: table EXPLORE IF REQUIRED.
+-> width: fit-content ---------> max-width: max-content AND min-width: min-content, width property remains at auto.
+
+-> <figure> element allows us to display any sort of non-typical content: images, videos, code snippets, widgets. It also allows us to caption that content with <figcaption>
+
+#########################################################################
+
