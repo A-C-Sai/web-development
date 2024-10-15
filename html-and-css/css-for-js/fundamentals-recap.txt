@@ -1,7 +1,7 @@
 -> Properties in CSS are attributies you can specify values for.
--> Selector us a descriptor that lets you target specific elements on the page.
+-> Selector is a descriptor that lets you target specific elements on the page.
 -> Declaration is a combination of a property and a value.
--> Rule, also knowwn as a style, is a collection of declarations, 
+-> Rule, also known as a style, is a collection of declarations, 
    targeting one or more selectors. A stylesheet is made up of multiple rules.
 
 -> Some values have units, like px, %, or em.
@@ -14,7 +14,7 @@
 
 ###################################################################################
 
--> it's common to use media queries to have alternative interfaces depending on the screen size e.g. pften used for navigation. Desktop users see a list of links, whereas mobile users see a hamburger icon.
+-> it's common to use media queries to have alternative interfaces depending on the screen size e.g. often used for navigation. Desktop users see a list of links, whereas mobile users see a hamburger icon.
 
 -> inside the parentheses, we typically use either max-width to add styles on small screens, or min-width to add styles on larger ones.
 
@@ -41,7 +41,7 @@
 
 -> Focus styles are primarily useful for folks who don't use a "pointer-style" input device. The focus styles show you where you are on the page, which element is selected.
 
--> Browsers do come with default focus styles. Typically it's either a bule or dotted outline. Don't add outline: none to get rid of the focus outlines unless it is being replaced with an even more prominent set of styles. https://a11y.coffee/
+-> Browsers do come with default focus styles. Typically it's either a bule or dotted outline. Don't add, outline: none to get rid of the focus outlines unless it is being replaced with an even more prominent set of styles. https://a11y.coffee/
 
 -> The :checked pseudo-class only applies to checkboxes and radio buttons that are "filled in". You can apply additional styles to indicate that the input is activated.
 
@@ -65,11 +65,11 @@
 
 -> with ::placeholder we can style the placeholder text in a form input.
 
--> pseudo-elements use teo colons, though some pesudo-elements also support single-colon syntax.
+-> pseudo-elements use two colons, though some pesudo-elements also support single-colon syntax.
 
 -> These selectors target elements in the DOM that we haven't explicitly created with HTML tags.
 
--> placeholders are typically very light. They aren't meant to contain critical information. They're meant to provide an example about how to format their data. They should never be used to label an input, use a <label></label> element instead. We should build forms that are flexible and support a wide range of user inputs, we can apply tranformations on the entered data using javascript. If they do enter invalid data, a helpful error message should be shpwn. It should explain what the user did wrong, and how to fix it. And it should be bright and high-contrast. If we were to remove all of the placeholders from the form, it should still be usable and easy to fill, if not, there is work to be done.
+-> placeholders are typically very light. They aren't meant to contain critical information. They're meant to provide an example about how to format their data. They should never be used to label an input, use a <label></label> element instead. We should build forms that are flexible and support a wide range of user inputs, we can apply tranformations on the entered data using javascript. If they do enter invalid data, a helpful error message should be shown. It should explain what the user did wrong, and how to fix it. And it should be bright and high-contrast. If we were to remove all of the placeholders from the form, it should still be usable and easy to fill, if not, there is work to be done.
 
 -> ::before and ::after pseudo-elements are added inside the element, right before and after the element's content. They are really just secret spans. We probably shouldn't use these two pseudo-elements. There are also some accessibility concerns with these pseudo-elements espicially with screen readers having inconsistencies in handling these elements.
 
@@ -113,18 +113,18 @@ https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/
 -> Font families come in different styles. Most Popular: Serif, Sans-serif, Monospace...
 -> By passing a category instead of a specific font, the OS will use its default system font from this category.
 
--> A web font is a custome font that we load in our CSS. We can drop a snippet into our HTML which will download this custom font onto the user's device, when they visit our site/app. This HTML snippet will make the web font available for us to use in our CSS.
+-> A web font is a custom font that we load in our CSS. We can drop a snippet into our HTML which will download this custom font onto the user's device, when they visit our site/app. This HTML snippet will make the web font available for us to use in our CSS.
 
 -> when using a web font, it's customary to surround its name in quotation marks. We can speficy multiple comma-separated fonts which is known as a "font stack". The idea is that the browser will use the first available font from the list. In production settings, we will likely wish to self-host the web-fonts, for optimal performance and GDPR compliance.
 
--> we can create bold text with font-weight property. There's a numbering system from 1 to 1000, which lets us control the font weight more precisely. The default value for font weight is 400, and the bold keyword maps to 700. of we only supply a single font weight, the browser will do its best to represent bold test by thickening the characters and it doesn't do a great job.
+-> we can create bold text with font-weight property. There's a numbering system from 1 to 1000, which lets us control the font weight more precisely. The default value for font weight is 400, and the bold keyword maps to 700. If we only supply a single font weight, the browser will do its best to represent bold text by thickening the characters and it doesn't do a great job.
 
 -> Emphasis is generally represented by slanting the text at an angle. We can achieve this using font-style: italic;
 The browser can simulate italic text by rendering characters at an angle BUT for best results, we should supply an italic character set.
 
 -> Underlines tend to mean links. Not all links need underlines. We can use the text-decoration property.
 
--> CSS allows us to change the cosmetic presentation of text, but it doesn;t affect the semantic meaning of the markup. Semantics are important b/c not everyone can see the cosmetic styles.
+-> CSS allows us to change the cosmetic presentation of text, but it doesn't affect the semantic meaning of the markup. Semantics are important b/c not everyone can see the cosmetic styles.
 
 -> We can shift characters horizontally using the text-align property. This property is also capable of aligning other elements, like images BUT we should reserve this property for text. We should exercise caution when applying alignment in international products that support right-to-left languages.
 
