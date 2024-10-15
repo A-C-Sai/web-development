@@ -178,7 +178,7 @@ Even if we use it only one, try using classes.*/
 
 /* li:first-child, li:last-child, li:nth-child(number/odd/even) pseudo-classes*/
 /* selects all li elements that are the first childs of it's parent elements  */
-li:first-child {
+ol li:first-child {
   font-weight: bold;
 }
 
@@ -189,7 +189,7 @@ li:first-child {
 
 */
 
-/* a:link, a:hover, a:hover, a:active DEFINED IN THIS ORDER */
+/* a:link, a:visited, a:hover, a:active DEFINED IN THIS ORDER */
 a:link,
 a:visited {
   color: #1098ad;
