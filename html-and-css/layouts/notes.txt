@@ -1,4 +1,4 @@
--> layout is the way test, images and other content is placed and arranged on a webpage
+-> layout is the way text, images and other content is placed and arranged on a webpage
 -> gives page a visual structure
 -> page vs componenet layout
 -> float, flexbox, grid layouts
@@ -36,7 +36,7 @@ Flexbox:
 
         3. flex-shrink: 1 | <integer> To allow an element to shrink (0 means no, 1+ means yes)
 
-        4. flex-basis: auto | <length> To define an item's width, instead of the width property, flex items will have the specified width unless the content is larger than the width in which case the element extends to fit the content. Think of this as the recommended width.
+        4. flex-basis: auto | <length> To define an item's width, instead of the width property, flex items will have the specified width unless the content is larger than the width in which case the element extends to fit the content. Think of this as the recommended width. By default flexbox is allowed to shrink elements so that they fit the container.
 
         5. flex: 0 1 auto | <int> <int> <int> Shortcut for flex-grow, -shrink, -basis
 
