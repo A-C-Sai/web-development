@@ -189,3 +189,66 @@ https://www.sitepoint.com/css-inheritance-introduction/#list-css-properties-inhe
 
 #########################################################################
 
+-> The default height behaviour is to be as small as possible while fitting all of the element's content.
+
+-> let's say that we have an element that wraps around our entire app. If a specific page doesn't have much content, the entire app might be less than 100% of our window height. What if we want it to take at least 100% of the available height?
+We need a .wrapper element that will be no smaller than 100% of the available height.
+
+Solution:
+  -> put height: 100% on every element b4 your main one (including html and body).
+  -> put min-height: 100% on that wrapper 
+  -> avoid using percentage based heights within that wrapper
+
+-> We need to include selectors for every element that sits between the root html tag, and the element we want to stretch to 100% of the screen size.
+
+-> An element's width is calculated based on its parent's size, but an element's height is calculated based on its children.
+
+-> If you set height: 100vh, your element will inherit its height from the viewport size. When you scroll on a mobile device, the address bar and footer controls slide away, yielding their space to the content. This means that scrolling on a mobile device changes the viewport height. When the page first loads, 100vh will actually be quite a bit taller than the viewable area. 
+
+Solution: 
+.element {
+  height: 100vh; /* Fallback for older browsers */
+  height: 100svh; // Small Viewport Height
+}
+
+vh, svh, dvh, lvh
+
+#########################################################################
+
+-> Adjacent margins will sometimes collapse and overlap
+
+-> Only vertical margin colpase, to be more precise, only block-direction margins collapse. Horizontal margins don't collapse in left-to-right languages.
+-> CSS gives us the power to switch our writing modes, so that block-level elements stack horizontally instead of vertically.
+
+-> Margins only collapse in flow layout
+-> Only adjacent elements collapse. Using </br> to increase space b/w block-lvl elements can have adverse effects on margins.
+
+-> The bigger margin wins.
+-> Nesting doesn't prevent collapsing. Margin is meant to increase distance b/w siblings. It is not meant to increase the gap b/w a child and its parent's bounding box; that's what padding is for. Margin will always try and increase distance b/w siblings, even if it means transferring margin to the parent element. Margins only collapse when they are touching. Padding and border act as a wall for collapsing margins.
+
+-> Empty space b/w two margins stops them from collapsing. e.g explicitly setting height to parent element.
+-> Margin collapsing is a per-side basis analysis.
+
+-> If the parent element creates a scroll container, it will disable margin collapse if the margins are on either side of the scroll container.
+
+-> Margins can collapse in same direction.
+-> Opx margin is still a collapsable margin.
+
+-> More than two margins can collapse
+
+-> A negative margin will pull an element in the opposite direction. The negative margins will share a space, and the size of that space is determined by the most negative margin.
+-> Negative and Positive margins? The number are added together.
+
+-> Multiple positive and negative margins? All +ve margins collapse together, All -ve margins collapse together, Add the two numbers together.
+
+-> https://mxstbr.com/thoughts/margin
+
+-> Margin is like putting glue on something before you’ve decided what to stick it to, or if it should be stuck to anything.
+
+-> A growing trend amongst JavaScript developers is to forego margin altogether, and use a combination of padding and layout components instead.
+
+-> For reusable components, we want them to be as unopinionated as possible.
+
+-> Layout components; Basic idea is that components aren't allowed to have "external margin", margin that extends past the edge of the border box. Instead, components are grouped using layout components like Stack.
+
+-> https://courses.joshwcomeau.com/css-for-js/guides/installing-node-and-react
