@@ -100,7 +100,7 @@
  * Method : this = <Object that is calling the method>
  * Simple function call : this = undefined in strict mode otherwise window
  * Arrow Functions : this = <this of surrounding function (lexical this)>
- * Event listenet : this = <DOM element that the handler is attached to>
+ * Event listener : this = <DOM element that the handler is attached to>
  *  
 */
 
@@ -126,6 +126,7 @@ console.log(add(1, 2, 3));
 /** 
  * 
  * Primitives (immutable) are stored in the call stack (execution context) while objects/reference types are stored in heap
+ * not all variables declared with const are immutable, this is only true for primitive types.
  * 
 const sam = {
     firstName: 'Sam',

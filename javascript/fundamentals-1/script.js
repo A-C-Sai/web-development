@@ -17,6 +17,8 @@ console.log(firstName);
 
 /** Data Types
  * every value is javascript is either an Object or a Primitive (immutable)
+ * Primitives: Number, String, Boolean, Undefined, Null, Symbol, Bigint
+ * Objects (Reference Types): Object Literals, Arrays, Functions, etc.
  * In javascript we don't have to manually define the data type of the value stored in a variable.
 
 console.log(typeof(23)); // Number

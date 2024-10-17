@@ -54,7 +54,7 @@ const nestedObj = {
 const { fullName: { firstName: fName, lastName: lName = "" } } = nestedObj;
 console.log(fName, lName);
 
-// practical use
+// practical use - destructuring an object when passing it as an argument to a function.
 const obj = {
   greeting: function ({ firstName, lastName = "" }) {
     console.log(`Greetings ${firstName} ${lastName}`);
@@ -110,7 +110,7 @@ console.table(person2);
 */
 
 /* Rest Pattern and Parameters
-// rest pattern always must be the last in the destructuring assignment. AND there can onlyy be 1 rest pattern per destructuring assignment. Works with objects also.
+// rest pattern always must be the last in the destructuring assignment. AND there can only be 1 rest pattern per destructuring assignment. Works with objects also.
 const [a, , b, ...others] = [1, 2, 3, 4, 5, 6];
 console.log(a, b, others);
 
@@ -259,7 +259,7 @@ const person = {
  * .toUpperCase()
  * .trim()
  * can chain methods
- * .replace("<to_replace>"","<replace_with>"") ---> replaces first appearance; case sensitive
+ * .replace("<to_replace>","<replace_with>") ---> replaces first appearance; case sensitive
  * .replaceAll()
  * can use RegEx
  * .includes("<substring>")
