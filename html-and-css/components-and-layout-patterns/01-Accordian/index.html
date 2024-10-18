@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordian Component</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1;
+        color: hsl(210, 10%, 23%);
+      }
+
+      .accordian {
+        width: 700px;
+        margin: 100px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .element {
+        box-shadow: 0 0 32px rgba(0, 0, 0, 0.15);
+        background-color: hsl(0, 0%, 100%);
+        padding: 24px;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        column-gap: 24px;
+        row-gap: 32px;
+        align-items: center;
+      }
+      .open {
+        border-top: 10px solid rgb(8, 125, 90);
+      }
+
+      .number,
+      .question {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+      .number {
+        color: hsl(210, 6%, 90%);
+        grid-column: 1;
+        grid-row: 1;
+      }
+      .question {
+        grid-column: 2;
+        grid-row: 1;
+      }
+      .changeTextColor {
+        color: hsl(162, 88%, 26%);
+      }
+      .arrow {
+        stroke: hsl(162, 88%, 26%);
+        stroke-width: 3;
+        width: 17px;
+        height: 17px;
+        grid-column: 3;
+        grid-row: 1;
+      }
+      .arrow:hover {
+        cursor: pointer;
+      }
+      .more {
+        grid-column: 2;
+      }
+      .more p {
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+      .more ul {
+        color: hsl(210, 7%, 56%);
+        margin-left: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="accordian">
+      <div class="element">
+        <span class="number">01</span>
+        <p class="question">Where are these chairs assembled?</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="arrow"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+          />
+        </svg>
+
+        <section class="more hidden">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+            labore sint ad rerum ullam maxime harum fuga excepturi voluptates
+            unde, ea magnam iusto a eos, esse quibusdam doloribus nam debitis!
+          </p>
+          <ul>
+            <li>Lorem ipsum dolor sit, amet consectetur</li>
+            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
+            <li>Lorem ipsum dolor sit, amet consectetur</li>
+            <li>Lorem ipsum dolor sit, amet consectetur adipisicing</li>
+          </ul>
+        </section>
+      </div>
+      <div class="element">
+        <span class="number">02</span>
+        <p class="question">How long do I have to return my chair?</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="arrow"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+          />
+        </svg>
+
+        <section class="more hidden">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+            labore sint ad rerum ullam maxime harum fuga excepturi voluptates
+            unde, ea magnam iusto a eos, esse quibusdam doloribus nam debitis!
+          </p>
+          <ul>
+            <li>Lorem ipsum dolor sit, amet consectetur</li>
+            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
+            <li>Lorem ipsum dolor sit, amet consectetur</li>
+            <li>Lorem ipsum dolor sit, amet consectetur adipisicing</li>
+          </ul>
+        </section>
+      </div>
+      <div class="element">
+        <span class="number">03</span>
+        <p class="question">Do you ship to countries outside EU?</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="arrow"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+          />
+        </svg>
+
+        <section class="more hidden">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+            labore sint ad rerum ullam maxime harum fuga excepturi voluptates
+            unde, ea magnam iusto a eos, esse quibusdam doloribus nam debitis!
+          </p>
+          <ul>
+            <li>Lorem ipsum dolor sit, amet consectetur</li>
+            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
+            <li>Lorem ipsum dolor sit, amet consectetur</li>
+            <li>Lorem ipsum dolor sit, amet consectetur adipisicing</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <script>
+      const elements = document.querySelectorAll(".element");
+      for (const element of elements) {
+        const number = element.querySelector(".number");
+        const question = element.querySelector(".question");
+        const arrow = element.querySelector(".arrow");
+        const more = element.querySelector(".more");
+
+        arrow.addEventListener("click", function () {
+          more.classList.toggle("hidden");
+          number.classList.toggle("changeTextColor");
+          question.classList.toggle("changeTextColor");
+          element.classList.toggle("open");
+        });
+      }
+    </script>
+  </body>
+</html>
