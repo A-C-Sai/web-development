@@ -7,14 +7,14 @@
 6. background: -color
 7. border: width style color
 8. cursor
-9. padding: top bottom left right
-10. padding: top&bottom left&right
+9. padding: -top, -bottom, -left, -right
+10. padding: top&bottom left&right / top bottom left right
 11. margin
 12. display
 13. position
 14. top, bottom, left, right
 15. content
-16. letter spacing
+16. letter-spacing
 */
 
 * {
@@ -47,7 +47,7 @@ h2 {
 }
 
 h2::after {
-  content: "TOP";
+  content: "TOP"; /*Even if we don't want any text in our pseudo-element we need to specify this property */
   background-color: #ffe70e;
   color: #444;
   position: absolute;
@@ -232,7 +232,7 @@ a:hover {
   2. Padding
   3. Border
   4. Margin
-  5. Fill Area
+  5. Fill Area (content + padding + border)
 
   Default Behaviour : 
     -> Final Element Width = left border + left padding + width + right padding + right border (likewise for Height)
