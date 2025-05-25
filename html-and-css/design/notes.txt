@@ -45,7 +45,7 @@ Border-Radius:
 Whitespace and Visual Hierarchy:
 -> the right amount of whitespace makes designs look clean, modern and polished
 -> whitespace communicates how different pieces of information are related to one another
--> whitespace implies invisible relationship b/w the elements of a loyout
+-> whitespace implies invisible relationship b/w the elements of a layout
 -> The law of proximity
 -> too much whitespace looks detached, too little looks too crammed
 -> visual hierarchy is about establishing which elements of a design are the most important ones.

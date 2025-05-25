@@ -9,6 +9,12 @@ MAIN COLOR: #087f5b
 GREY COLOR: #343a40
 */
 
+/* 
+1. stroke or fill (color svg icons)
+2. box-shadow: horizontal offset | vertical offset | blur | scaling | color; there is also text-shadow property
+3. border-radius (we can also select specific corner and set it's radius)
+*/
+
 * {
   margin: 0;
   padding: 0;
