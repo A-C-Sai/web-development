@@ -205,15 +205,15 @@ nav {
   float: right;
 }
 
-/* .clear { This method clutters HTML as we need to add a additional empty div
-  clear: both;
+/* .clear { This method clutters HTML as we need to add an additional empty div
+  clear: both; ----> other possible values: left, right
 } */
 
 .clearfix::after {
   /* pseudo-elements by default are inline elements */
   content: "";
   clear: both;
-  display: block;
+  display: block; /*clearing floats only works on a block lvl element*/
 }
 
 article {
@@ -227,7 +227,7 @@ aside {
   width: 300px;
   background-color: rgba(255, 166, 0, 0.499);
   padding: 50px 40px;
-  box-sizing: border-box; /*final width = specified width*/
+  box-sizing: border-box; /*final width = specified width*/ /* default value : content-box*/
 }
 
 footer {
