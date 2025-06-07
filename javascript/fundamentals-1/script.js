@@ -2,6 +2,7 @@
 
 console.log(23);
 console.log("Hello World!");
+console.log(val-1, val-2, val-3, ... val-n);
 */
 
 /** Variables
@@ -19,7 +20,7 @@ console.log(firstName);
  * every value is javascript is either an Object or a Primitive (immutable)
  * Primitives: Number, String, Boolean, Undefined, Null, Symbol, Bigint
  * Objects (Reference Types): Object Literals, Arrays, Functions, etc.
- * In javascript we don't have to manually define the data type of the value stored in a variable.
+ * In javascript we don't have to manually define the data type of the value stored in a variable. Data types are determined automatically. NOTE: Values have TYPE NOT Variables.
 
 console.log(typeof(23)); // Number
 console.log(typeof(30.5)); // Number
@@ -28,17 +29,21 @@ console.log(typeof(true)); // Boolean
 console.log(typeof(false)); // Boolean
 
 let uninitializedVariable;
-console.log(uninitializedVariable); // Undefined
-console.log(typeof(uninitializedVariable)); // Undefined
+console.log(uninitializedVariable); // Undefined ---> value
+console.log(typeof(uninitializedVariable)); // Undefined ----> TYPE
 
-console.log(typeof(null)); // Object (bug)
+console.log(typeof(null)); // Object (bug!!!!)
 */
 
 /** Type Coversion and Coersion
 
  * Type Conversion - explicit
 
+- remember to captial first letter
+
 console.log(Number("Patrick"), typeof(Number("Patrick")));
+
+- NaN ----> number type ---> false
 
  * Coersion - implicit; 
     Note: Different operators may trigger different type coersion (may lead to unexpected bugs)
@@ -49,12 +54,15 @@ console.log(Number("Patrick"), typeof(Number("Patrick")));
 
 console.log(Boolean(0), Boolean(''), Boolean(undefined), Boolean(null), Boolean(NaN));
 console.log(Boolean({}));
+
+- In practice, the conversion to Boolean is implicit (type coersion)
 */
 
 /** Declaring Variables
  * const
  * let
  * var
+ * While we can declare variable without using const, let or var, this is a terrible idea.
  */
 
 /** Operators
@@ -62,7 +70,12 @@ console.log(Boolean({}));
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence
  * +, -, *, /, **
  * + can be used for string concatenation
- * = assignment
+ * = assignment 
+    - e.g. let x, y;
+           x = y = 0;
+
+    - e.g. const x = 2, y = 3;
+
  * ++, --
  * >, >=, <, <=
  * === / !== doesn't perform type coersion
@@ -80,6 +93,8 @@ console.log(`This is a
 multi-line
 string
 `);
+
+\n\ ---> new-line character in js.
 */
 
 /** if-else statement
@@ -110,13 +125,21 @@ switch(day){ // strict comparison
 }
 */
 
+/**
+ * expression produces a value
+ * statements themselves don't produce a vale, performs actions
+ * the difference can be a bit fuzzy
+ */
+
 /** Ternery Operator
- * expression/condition ? ifTrue : ifFalse;
+ * varName = expression/condition ? ifTrue : ifFalse;
  */
 
 /**
- * Javascript is backwards compatible
+ * Javascript is backwards compatible i.e. able to understand prior features/ versions (don't break the web)
  * How to use modern javascript:
     - During Development: use the latest browser
     - During Production: Use Babel to transpile and polyfill code (converting back to ES5 to ensure browser compatibility for all users.)
  */
+
+// alert(), prompt()
