@@ -16,7 +16,7 @@ There are more selectors e.g. child selector Refer to MDNg
 */
 
 body {
-    background-color: aquamarine;
+  background-color: aquamarine;
 }
 
 /*
@@ -27,6 +27,6 @@ BOX-MODEL is a fundamental part of CSS. It defines how elements are displayed on
     padding: transparent area around the content, inside the box;
     content: text, image etc.
 
-    fill area: area that gets filled with background color and image.
+    fill area: area that gets filled (content, padding & border) with background color and image.
 
 */

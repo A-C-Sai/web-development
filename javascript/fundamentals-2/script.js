@@ -1,4 +1,4 @@
-"use strict";
+"use strict"; // has to be the very first statement.
 
 /** Function Declaration
 
@@ -27,6 +27,7 @@ const <var_name> = function (parameters){
 /** Arrow Functions
 
 -> great for a quick one-line functions. 
+-> implicit return, only for one liners
 -> Has no "this" keyword
 
 const <var_name> = (parameters) => {
@@ -52,10 +53,8 @@ methods:
 - <array_name>.unshift(element) adds element to the start of the array; returns new array length
 - <array_name>.shift() removes the first element in the array returns removed element
 - <array_name>.indexOf(element) index of element if it exists else -1
-- <array_name>.includes(element) true/false
+- <array_name>.includes(element) true/false ----> strict equality (no type coresion)
 */
-
-
 
 /*
 function MinMax(arr) {
@@ -80,11 +79,11 @@ const [min, max] = MinMax([3, 6, 2, 9, 10, 0, 5, 2, 8]);
 console.log(min, max);
 */
 
-
-
 /** Objects
 
-const <obj_name> = {
+- data structure that stores key-value pairs
+
+const <obj_name> = { -----> obj literal syntax
     <key/property>: value,
     <key/property>: value,
     <key/property>: function expression (object method)
@@ -92,11 +91,14 @@ const <obj_name> = {
 
 // accessing
 <obj_name>.<property>
-<obj_name>['<property>']
+<obj_name>['<property>'] --> useful when we need to compute the property name dynamically.
+
+-> if the key or property doesn't exist well will get undefined
 
 -> setting can be done using both dot and bracket notation, can create new properties on the fly
 
--> "this" keyword refers to the object itself
+-> "this" keyword refers to the object itself i.e. obj that is calling the method
+-> can use the "this" keyword to access properties as well create new properties on the current obj
 
 */
 
@@ -125,5 +127,5 @@ while(condition) {
  */
 
 /**
- * We can use the debugger; statement in our code to launch the debugger console in browser.
+ * We can use the "debugger;"" statement in our code to launch the debugger console in browser.
  */
