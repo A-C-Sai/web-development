@@ -317,7 +317,7 @@ const person = {
  * .replaceAll()
 
 
- * can use RegEx
+ * can use RegEx / /g
 
  * .includes("<substring>")
  * .startsWith("<substring>")
