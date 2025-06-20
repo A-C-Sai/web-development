@@ -74,8 +74,46 @@
 
 - Date ---> Number = timestamp
 - we are able to perform operations on dates
+- might need to round the values using Math.round
 - moment.js
 
+
+*/
+
+/** Internationalization (Intl) API
+  
+  - Allows us to easily format numbers, dates and strings according to diff languages
+  - iso language code table
+
+  e.g. 
+
+  const optionsObj = {  ---> optional
+    hour: 'numeric',
+    minute: 'numeric',
+    day: 'numeric,
+    month: 'long' OR '2-digit' OR 'numeric
+    year: ...
+    weekday: ... we can also say 'short" OR 'narrow'
+  }
+  
+  const localeString = navigator.language;
+  const varName = new Intl.DateTimeFormat(<localeString>, <optionsObj>).format(<DateTimeObj>)
+
+  - new Intl.DateTimeFormat(<localeString>, <optionsObj>) this alone creates a formatter
+
+
+  e.g.
+
+  options = {
+    style: 'unit' OR 'percent' OR 'currency',
+    unit: ...
+    currency: ...
+    useGrouping: 
+  }
+
+  - Note: currency is not determined by locale
+
+  new Intl.NumberFormat(locale, options).format()
 
 */
 
@@ -83,13 +121,13 @@
  *
  * setTimeout(callback, interval (ms)) callback runs just once after a defined time
         - NOTE: code execution doesn't stop at this point.
-        - when code execution reaches this line, the setTimeout function is called and register the callback function
+        - when code execution reaches this line, the setTimeout function is called and registers the callback function
           to be called later. The the code execution simply continues.
         - this mechanism is called async JS
 
         e.g. const timerName = setTimeout(function(params){stmt...}, delay, arg-1, arg-2, ... , arg-n);
 
-        - we are able to cancle the time b4 the dealy period e.g. based on a condition b4 that pre-defined dealy is reached
+        - we are able to cancel the timer b4 the dealy period e.g. based on a condition b4 that pre-defined dealy is reached
         - if(condition) clearTimeout(timerName);
  *
  *
