@@ -1,0 +1,94 @@
+#####################################
+    THREE PILLARS
+#####################################
+
+1. Responsive Design
+    - fluid layouts
+    - media queries
+    - responsive images/ typography
+    - correct units
+    - desktop vs mobile first approach
+
+2. Maintainable and scalable code
+    - clean
+    - easy to understand
+    - supports future growth
+    - reusable
+    - how to organize files
+    - how to name classes
+    - how to structure HTML
+
+3. Web Performance
+
+
+#####################################
+    BEHIND THE SCENES - OVERVIEW
+#####################################
+
+LOAD HTML ---> PARSE HTML (decode the code line-by-line) -------> Document Obj Model (DOM) (Where decoded HTML is Stored)
+                    |
+                    | As the browser parses the HTML it also finds the stylesheets
+                    | included in the HTML header and starts loading them as well.
+                    |
+                    |
+                    v                         |---------- Resolving conflicting CSS declarations (cascade)
+                    v                         |
+                LOAD CSS -----> PARSE CSS ----                                      --------------> CSS Obj Model (CSSOM)
+                                              |
+                                              |---------- Process final CSS values
+
+
+- DOM + CSSOM form the so called RENDER TREE (we have everything to render the page)
+                                     |
+                                     |
+                                     |
+                                     v
+                Website rendering : the visual formatting model
+                                     |
+                                     |
+                                     |
+                                     v
+                            Final Rendered Website
+
+
+#####################################
+        Cascade & Specificity
+#####################################
+
+-  CSS RULE = Selector + Declaration Block
+                                |
+                                |----- Declarations 
+                                            |
+                                            |---- Property
+                                            |---- Declared Value
+
+
+- CASCADE : Process of combining different stylesheets and resolving conflicts b/w diff CSS rules and declarations,
+when more than one rule applies to a certain element.
+
+- Different sources of CSS: Author, User, Browser (User Agent)
+
+- Importance > Specificity > Source Order
+
+- Importance:
+    - User !important declarations
+    - Author !important declarations
+    - Author declarations
+    - User declarations
+    - Default Browser declarations
+
+- Specificity (inline, IDs, Classes, Elements) (left-to-right):
+    - inline
+    - IDs
+    - Classes, Pesudo-Classes, Attribute
+    - Elements, Pesudo-Elements
+
+- Source Order: The last declaration in the code will override all other declarations and will be applied.
+
+- * selector has a specificity of (0,0,0,0)
+
+-  no combinators affect specificity.  The weight applied to a css declaration block is determined by the the number of each selector type in the matching selector.
+
+- Rely more on specificity than order of selectors
+
+- when using 3-rd party stylessheets, always put author stylesheets last in HTML head, allows us to override styles 
