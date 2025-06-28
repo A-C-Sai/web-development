@@ -92,3 +92,119 @@ when more than one rule applies to a certain element.
 - Rely more on specificity than order of selectors
 
 - when using 3-rd party stylessheets, always put author stylesheets last in HTML head, allows us to override styles 
+
+
+
+#####################################
+        Value Processing
+#####################################
+
+- each time we use an unit other than pixles, it will ultimately be converted to px in order for the css engine to be able to render the page on the screen.
+
+1. Declared Value (author declaration)
+2. Cascaded Value (after the cascade)
+3. Specified Value (defaulting, if there is no cascaded value)
+4. Computed Value (converting relative values to absolute so that they can be inherited)
+5. Used Value (final calculations, based on layout)
+6. Actual Value (considering browser and device restrictions)
+
+- % is technicially not an unit
+
+- for each element on the page, each and every css property needs to have a value (even if we don't declare it at all)
+
+- each css property has something called the initial value from the css specification (value used if there is no cascaded value, author, user nor the browser specified a value, GIVEN there is not inheritance)
+
+- Browsers specify a root font-size for each page (usually 16px) ---> source : user-agent
+
+
+
+                          How to convert to px
+
+- % (fonts)               x% * parent's computed font-size                    
+- % (lengths)             x% * parent's computed width (there are exceptions)
+- em (fonts)              x * parent's computed font-size    
+- em (lengths)            x * current element computed font-size    
+- rem                     x * root computed font-size
+- vh                      x * 1% of viewport height
+- vw                      x * 1% of viewport width
+
+
+
+#####################################
+            Inheritance
+#####################################
+
+
+- A way of propagating property values from parent elements to their children
+- Some properties can be inherited while others cannot (usually text based properties are inherited)
+
+- Is there a cascaded value? (author or browser have declared a value) 
+                        |
+                        |------- YES ----- Specified Value = Cascaded Value    
+                        |--------- NO ------- Is the property inherited / inheritable? --- YES ---- Specified Value = COMPUTED VALUE of Parent's Element
+                                                                |
+                                                                |------ NO ----- Specified Value = Initial Value (specific to each property)
+
+
+- NOTE: It is the computed value of a property that gets inherited, not the declared value.
+- Inheritance only works if no one declares a value for that property
+- The "inherit" keyword forces inheritance on a certain property
+- The "initial" keyword resets a property to its initial value.
+- "all" property 
+
+
+#########################################
+    The visual formatting model
+#########################################
+
+- Algorithm that calculates boxes and determines the layout of these boxes, for each element in the render tree, in order to determine thefinal layout of the page.
+
+The algo takes into factor:
+    - dimensions of the boxes
+    - box types
+    - positioning scheme
+    - stacking contexts
+    - other elements present in the render tree
+    - extrenal info such as: current viewport size, dimensions of images etc.
+
+- by putting all these factors together, the browser figures out how the final website will look for the user.
+
+
+
+#######################################################
+    CSS Architecture, Components and BEM
+#######################################################
+
+- think about the layout of the website or app b4 coding 
+     - Component-Driven Design:
+        - modular building blocks that make up interfaces
+        - held together by the layout of the page 
+        - re-usable across a project and b/w diff projects
+        - independent, allowing us to use them anywhere on the page
+
+
+- build layout in HTML and CSS with consistent structure for naming classes
+    - Block Element Modifer (BEM):
+        - BLOCK: standalone component that is meaningful on its own
+        - ELEMENT: part of a block that has no standalone meaning
+        - MODIFIER: a different version of a block or an element
+
+        e.g. LOW SPECIFICITY BEM SELECTORS
+        .block{}
+        .block__element{}
+        .block__element--modifier{}
+
+
+- create a logical architecture for your CSS with files and folders
+    - THE 7-1 Pattern:
+        - 7 different folders for partial Sass files, and
+          1 main Sass file to import all other files into a compiled CSS stylesheet.
+
+    - 7 folders:
+        - base/
+        - components/
+        - layout/
+        - pages/
+        - themes/
+        - abstracts/
+        - vendors/
