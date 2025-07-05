@@ -1,0 +1,200 @@
+##########################
+SASS - Overview
+##########################
+
+- SASS is a CSS preprocessor, an extension of CSS that adds power and elegance to the basic language.
+
+- use SASS to fix the problems we have with css
+
+- CSS can get very messy very quickily. Having a single CSS files with lot of lines without any reuasble pieces, or logic gets completely un-managable.
+
+- SASS provides handy features and tools that CSS doesn't have. All while not changing the fundamental way CSS works.
+
+- SASS SOURCE CODE (sass file) ---- sass compiler ----> Compiled CSS CODE (css file)
+
+- Main SASS features:
+
+    - Variables: for reuasble values.
+    - Nesting: to nest selectors inside of one. another, allowing us to write less code.
+    - Operators: for mathematical operations right inside CSS.
+    - Partials and imports: to write CSS in different files and importing them all into one single file.
+    - Mixins: to write reusable pieces of CSS code.
+    - Functions: similar to mixins, with the difference that they produce a value that can then be used.
+    - Extends: to make different selectors inherit declarations that are common to all of them.
+    - Control directives: for writing complex code using conditionals and loops.
+
+- Sass syntax (indentation sensitive and diesn;t use curly braces or semi-colons) vs SCSS syntax (preserves the way original CSS looks like)
+
+
+
+##############################
+SASS - Variables & Nesting
+##############################
+
+- look into custom properties css
+    e.g. 
+    :root {
+          --color-primary: #5ec576;
+    }
+
+    .section {
+        color: var(--color-primary);
+    }
+
+
+- declaring variables in SASS
+    e.g. 
+    $color-primary: red;
+
+- referencing variables
+    e.g. 
+    .section{
+        color: $color-primary;
+    }
+
+- comments in SASS //comment or /*comment*/
+
+- NESTING:
+
+    HTML:
+        <nav>
+            <ul class="navigation">
+                <li></li>
+                <li></li>
+            </ul>
+        </nav>
+
+    SASS:
+
+        .navigation{
+            --------
+
+            li {
+                -----
+
+                &:first-child {
+                    -----
+                }
+            }
+        }
+    
+    - .navigation, .navigation li, .navigation li:first-child
+
+    - & = selector path up-to that point
+
+    - clearfix hack:
+        - add "clearfix" class to parent
+        - .clearfix::after {
+                content: "";
+                clear: both;
+                display: table;
+        }
+
+- MISC:
+    - darken(color, percentage)
+    - lighten(color, percentage)
+
+
+
+
+####################################
+SASS - Mixins, Extends & Functions
+####################################
+
+- Mixins = huge variable with multiple lines of code
+    e.g. 
+    @mixin mixin-name($parmeter) {
+        ------
+    }
+
+    .section{
+        @include mixin-name(argument);
+    }
+
+- parameters are optional for mixins
+
+
+- Functions: built-in SASS vs user
+
+    e.g. 
+    @function func-name($param-1, $param-2){
+        @return $param-1 + $param-2;
+    }
+
+    func-name(20,30);
+
+
+- Extends: we can write a place holder and put a bunch of style in there and have other other selectors extend that placeholder.
+
+    - NOTE: its the placeholder that is being replaced by the selector. The styles themselves are not copied like in mixins.
+
+    e.g. 
+    %btn-placeholder
+    {
+        -----
+    }
+
+    .btn-main{
+        &:link{
+            @extend %btn-placeholder;
+        }
+
+        &:hover{
+
+        }
+    }
+
+    .btn-hot{
+        &:link{
+            @extend %btn-placeholder;
+        }
+
+        &:hover{
+            
+        }
+    }
+
+    - this will result in
+        .btn-main:link, .btn-hot:link{
+            ----styles defined in placeholder-----
+        }
+
+    - only use extends if the rules that we are extending are inherently and thematically related. This will ensure that we will not have any maintenance problems later.
+
+
+
+####################################
+NPM & NODEJS PACKAGE ECOSYSTEM
+####################################
+
+- where we can find all kinds of open-source tools and libraries, frameworks needed for mordern web dev.
+
+- node.js is a open source JS runtime which allows devs to write & run JS applications on the server. Devs started using node.js to also write tolls to help them with local web dev.
+
+- NPM (package manager) is a simple CLI that allows developers to install & manage packages on their local computers. There are all kinds of open source tools, libraries & frameworks needed for modern dev.
+
+- b4 installing our first package, first thing we always do in a new project is to create a package.json file,
+which will contain the definitions of our project & where NPM will write the packages that we use. (use "npm init" command)
+
+- npm install <package> --save-dev
+- npm install <package> -g
+
+- When you install a package, you install a specific version of that package. The package-lock.json "locks" in that version of the package. This is useful because packages change, and you want to be able to specify the exact versions of your project's dependencies.
+
+- dependencies vs devdependencies
+
+- add node_modules/ to .gitignore
+
+- running "npm install" it will know to install the packages mentioned in the package.json file.
+
+- npm uninstall <package> --save
+
+- create a "sass" folder
+- main.scss
+
+- "scripts": {
+    "compile:sass": "sass sass/main.scss src/styles.css -w",
+    "live-server": "live-server"
+  },
+
+- npm run compile:sass 
