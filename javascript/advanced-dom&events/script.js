@@ -102,6 +102,7 @@ NOTE:
 
 - data attributes are attributes which start with data-....-...
 - we can access data attributes via .dataset.camelCase
+- we can use data attributes as a way to store info in the DOM
 
 - .classList.add('class-1', 'class-2')/.remove()/.toggle()/.constains()
 */
@@ -221,3 +222,8 @@ NOTE:
 
 - comparisons b/w elements work ===, !==
 */
+
+// if(!clicked) return --> Guard clause instead of if(clicked){---}
+
+// handler function can ONLY take one argument, to pass additional "arguments" use the bind method
+// e.currentTarget === this unless we manually set this keyword to some other value
