@@ -227,3 +227,49 @@ NOTE:
 
 // handler function can ONLY take one argument, to pass additional "arguments" use the bind method
 // e.currentTarget === this unless we manually set this keyword to some other value
+
+// scroll event on window obj, not efficient, bad for performance. As the event fires all the time no matter how small the scroll is. Especially on mobile.
+
+/* 
+#######################################
+Intersection Observer API
+#######################################
+
+- allows our code to observe changes to the way that a certain target element intersects another alement OR the way it intersects the ViewPort.
+
+const obsCallback = function(entries, observer){
+     ----------
+}
+
+
+const obsOptions = {
+     root: element or null,
+     threshold: value or array
+     rootMargin: ----> applied invisible margin to target element +/-
+}
+
+const observer = new IntersectionObserver(obsCallback, obsOptions);
+observer.observe(target);
+
+NOTE: The observer fires once immediately after setup with current visibility.
+
+- intersectionRatio
+- isIntersecting
+- target
+
+observer.unobserve(element);
+
+- will observe all of the elements it has been setup on in the very beginning when the DOM first loads.
+*/
+
+/**
+#################################
+Lazy Loading Images
+#################################
+
+- images have a big impact on performance
+- imp to optimize images on webpages
+
+- can use the network tab in dev tools to simulate slow network and web performance
+
+*/
