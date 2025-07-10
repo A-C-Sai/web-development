@@ -244,8 +244,10 @@ const obsCallback = function(entries, observer){
 
 const obsOptions = {
      root: element or null,
-     threshold: value or array
-     rootMargin: ----> applied invisible margin to target element +/-
+     threshold: value or array -------> [0, 1] -----> It specifies the percentage of the target element that must be visible within the root for the observer callback to fire.
+     rootMargin: ----> applied to root element +/-, string, px or %, top right bottom left ------> It expands or contracts the root's bounding box, effectively altering when visibility is considered to begin or end.
+     +ve values --> expand root boundary --> fire early
+     -ve values --> shrink root boundary ---> fire late
 }
 
 const observer = new IntersectionObserver(obsCallback, obsOptions);
@@ -256,6 +258,9 @@ NOTE: The observer fires once immediately after setup with current visibility.
 - intersectionRatio
 - isIntersecting
 - target
+- boundingClientRect
+- intersectionRect
+- rootBounds
 
 observer.unobserve(element);
 
@@ -272,4 +277,5 @@ Lazy Loading Images
 
 - can use the network tab in dev tools to simulate slow network and web performance
 
+- "[data-src]" ---> selectiong any elements with the data-src attribute
 */
