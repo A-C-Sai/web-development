@@ -1,0 +1,47 @@
+- placed in root element (html)
+- :root{} instead of html{}
+- by placing the custom variables in the root element they become global properties
+- can use them throughout the site, these properties cascade down
+- Syntax Definition: 
+    --custom-property: value;
+- Syntax Usage: property: 
+    var(--custom-property, fallback-value);
+
+
+- we can change the value of a custom property (redefine/ overwrite) in another block/ selectors GIVEN it was already defined in the :root selector. Owerwriting syntax is same as definition. This is not possible in Sass variables (need to redefine).
+
+- --ff-
+- --fs-
+- --fw-
+- --clr-
+- --br-
+- --sp-
+
+
+- We can define custom properties in other blocks / selectors in order to "isolate" some properties
+
+
+- with media queries also we can change the value of a custom property (redefine/ overwrite) in another block/ selectors GIVEN it was already defined in the :root selector. Owerwriting syntax is same as definition. This is not possible with Sass variables (need to redefine).
+
+:root{
+        
+}
+
+@media(min-width / max-width: __px){
+    :root{
+
+    }
+}
+
+- fallbacks: 
+    color: red; --> reads first
+    color: var(--clr-primary); ---> ignored if not supported.
+
+    - kevin powell vid 5 CSS Variables (went over my head)
+
+
+- document.documentElement ---> selecting root element (html) in JS
+- document.documentElement.style.setProperty(,)
+
+
+- locally scoped custom properties (explore later)
